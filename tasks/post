@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# Based on a script by Alex Payne: https://gist.github.com/106869/15b2e64325ee26f2404679eb54d77f59f26c1994
+
+ROOT_DIR = File.join(File.dirname(__FILE__), '/..')
+
+title = ARGV[0]
+
+unless title
+  puts %{Usage: #{$0} "the-post-title"}
+  exit(-1)
+end
+
+datetime = (Time.now).strftime('%Y-%m-%d')  # 30 minutes from now.
+
+# E.g. 2006-07-16_11-41-batch-open-urls-from-clipboard.markdown
+path = "#{ROOT_DIR}/_posts/#{datetime}-#{title}.markdown"
+
+header = <<-END
+---
+title: #{title}
+layout: post
+---
+
+END
+
+File.open(path, 'w') {|f| f << header }
+system(ENV['EDITOR'] || 'vim', path)

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>iJam &raquo; Bryan Summersett</title>
+	<meta name="author" content="Bryan Summersett">
+	<link href="http://feeds.feedburner.com/bryan-summersett" rel="alternate" title="Bryan Summersett" type="application/atom+xml" />
+	<link rel="icon" href="/favicon.ico">
+	<link rel="home index" href="/" type="text/html">
+  <link rel="me author" href="/about" type="text/html">
+  <link rel="stylesheet" href="/css/reset-min.css" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+  <div id="main">
+    <div id="left-pane">
+      <a id="logo" href="/">home</a>      
+
+      <div id="navigation">
+        <a class="nav-item" href="/index.html">posts</a>
+        <span class="nav-item">projects</span>
+          <a class="nav-item project-link" href="/projects/ijam.html" title="a collaborative music application for the iPhone" >iJam</a>
+          <a class="nav-item project-link" href="/projects/pdlib.html" title="an open source adapter for Pure Data to Cocoa Touch">pdlib</a>
+        <a class="nav-item" href="/about.html">about</a>
+      </div>
+
+    </div>
+    
+    <div id="right-pane">
+      <div id="header">
+        <h1 id="title">iJam</h1>
+        <h2 id="subtitle">a collaborative music application for the iPhone.</h2>
+      </div>
+
+      <div id="content">
+		<p>iJam was created to lower the barrier to entry for collaborating musically with others.
+People are often unable to do so for a number of reasons. People:</p>
+
+<ul>
+<li>typically need to be in the same room</li>
+<li>can't afford instruments</li>
+<li>can't relocate instruments easily (e.g., drums)</li>
+<li>lack the technical expertise to set up existing systems</li>
+</ul>
+
+
+<p>iJam is a mobile application for the iPhone which facilitates networked, collaborative
+music making via musical "sessions." Users can play either play an instrument
+by themselves or "share" playing an instrument. Either way, this is then heard
+by all members of the session. It features multiple virtual instruments
+playable via multi-touch and gesture-based input mechanisms (accelerometer, etc).
+iJam is designed to make it effortless to quickly collaborate with others.</p>
+
+<p>To start, a player can either create a new
+session or join an existing one. Sessions can be configured to be Wifi-based
+or Bluetooth-based, with both using Apple's Bonjour service to broadcast their presence.</p>
+
+<p><img src="/images/ij-main.png" alt="Figure 1: iJam main application screen" /></p>
+
+<p>From here, the user can select from (currently) a few instruments, including
+<em>drumelectro</em>, <em>rhodeybass</em>, and <em>metronome</em>. These are synthesized using
+<a href="http://crca.ucsd.edu/~msp/software.html">Pure Data</a> software. iJam uses this
+extensively for its audio back end, and Pure Data's port to the iPhone is available
+as the open-sourced <a href="/projects/pdlib">pdlib</a> on this site.</p>
+
+<p><img src="/images/ij-drums.png" alt="Figure 2: iJam simplistic 'drumelectro' interface. Drums are movable. Note the timeline above." /></p>
+
+<p>iJam can currently be used in two different "modes": <em>sequenced</em> or <em>free-form</em>.
+The two modes can be toggled by selecting the red record button on the
+options pane for the instrument. When in <em>sequenced</em> mode, all notes
+played are recorded on the timeline and played back on all future iterations
+of the loop unless the timeline is cleared.</p>
+
+<p>Currently iJam requires a server with Ross Bencina's
+<a href="http://www.audiomulch.com/~rossb/code/oscgroups/">oscgroups</a>
+server software to be running on a local machine, but this will be integrated
+into the host iPhone in the future (this allows for completely serverless
+session creation).
+Once connected, clients use UDP multicasting to send <a href="http://opensoundcontrol.org/">OSC</a>
+messages directly to other session participants.</p>
+
+<p>I've been working on the project as part of my senior design class, and
+plan on continuing work throughout the Winter 2010 semester.
+My group and I are on target to have iJam available on the App Store in Spring 2010.
+Subscribe to my blog if you're interested in its development.</p>
+
+
+      </div>      
+    </div>
+    <div id="footer">
+		2012 Bryan Summersett
+    </div>
+  </div>
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6016902-1");
+pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+</body>
+</html>
