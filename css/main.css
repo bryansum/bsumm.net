@@ -1,12 +1,12 @@
 
 body {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", 
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
                  "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 300;
-	font-size:16px;
-	line-height:1.5;   /* 30px */
-	color:#212122;
-	background-color:#fff;
+    font-size:16px;
+    line-height:1.5;   /* 30px */
+    color:#212122;
+    background-color:#fff;
 }
 
 html, body {
@@ -14,13 +14,13 @@ html, body {
 }
 
 a, a:link {
-	color:#000;
+    color:#000;
 }
 a:visited {
-	color:#222;
+    color:#222;
 }
 a:hover {
-	text-decoration:none;
+    text-decoration:none;
 }
 
 #main {
@@ -31,8 +31,7 @@ a:hover {
 /* --------------------- left-pane ----------------------- */
 
 #left-pane {
-    width: 340px;
-    float: left;
+    float: right;
 }
 
 #logo {
@@ -44,7 +43,7 @@ a:hover {
     width: 340px;
     height: 127px;
 /*    border: 1px solid blue;*/
-}   
+}
 
 #navigation {
     padding-top: 15px;
@@ -67,7 +66,7 @@ h1 {
     font-size: 30px;
 }
 h2 { font-size: 24px;}
-code { 
+code {
     font-size: 12px;
     font-family: "Menlo", "Monaco", 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
@@ -75,9 +74,9 @@ p, pre {
         margin-bottom: 1em;
 }
 
-p, ul { 
-    font-family: corbel, 'helvetica neue', helvetica, sans-serif; 
-    font-size: 14px; 
+p, ul {
+    font-family: corbel, 'helvetica neue', helvetica, sans-serif;
+    font-size: 14px;
     font-weight: normal;
 }
 p {
@@ -116,7 +115,7 @@ ul {
         padding-top: 15px;
 /*        font-family: "Georgia", Helvetica, Arial;   */
     }
-    
+
 /* flash messages */
     .error {
         background: rgb(251, 227, 228);
@@ -142,9 +141,9 @@ ul {
 /* for writings */
     .entry {
         margin-bottom: 1em;
-    }    
+    }
     .entry p { margin: 0.5em;}
-    .entry blockquote { 
+    .entry blockquote {
         color: #777;
         padding: 0.25em;
     }
@@ -160,7 +159,7 @@ ul {
         font-size: small;
         color: #999;
     }
-    
+
 /* for images */
 img {
     margin: 1em 1em 1em 0;
@@ -170,7 +169,7 @@ img {
     -moz-box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 .img-caption {
-  font-size: x-small; 
+  font-size: x-small;
   margin-top: -1.75em;
   margin-bottom: 1.5em;
 }
