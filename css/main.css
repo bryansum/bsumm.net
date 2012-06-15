@@ -1,16 +1,9 @@
 
 body {
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
-                 "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: 300;
-    font-size:16px;
-    line-height:1.5;   /* 30px */
     color:#212122;
     background-color:#fff;
-}
-
-html, body {
     background: url(/images/graybg.png) top left repeat-y;
+    padding: 1em 0 1em;
 }
 
 a, a:link {
@@ -19,175 +12,43 @@ a, a:link {
 a:visited {
     color:#222;
 }
-a:hover {
-    text-decoration:none;
-}
 
-#main {
-    padding: 10px;
-    width: 900px;
-}
+/* --------------------- header / footer ----------------------- */
 
-/* --------------------- left-pane ----------------------- */
-
-#left-pane {
-    float: right;
-}
-
-#logo {
-    float: left;
-    border: none;
-    text-indent: -1000px;
-    display: block;
-    background: url(/images/title.png);
-    width: 340px;
-    height: 127px;
-/*    border: 1px solid blue;*/
-}
-
-#navigation {
-    padding-top: 15px;
-    clear: both;
-}
-#navigation .nav-item {
-    text-align: right;
-    display: block;
-    font-size: 30px;
-}
-#navigation .nav-item.project-link { font-size: 16px; color: #656565;}
-
-/* -------------- body ---------------------------- */
-.page_nav {
-  font-size: 12px;
-  text-align: right;
-}
-
-h1 {
-    font-size: 30px;
-}
-h2 { font-size: 24px;}
-code {
-    font-size: 12px;
-    font-family: "Menlo", "Monaco", 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-}
-p, pre {
-        margin-bottom: 1em;
-}
-
-p, ul {
-    font-family: corbel, 'helvetica neue', helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-}
-p {
-    text-indent: 20px;
-}
-em { font-style: italic;}
-ul, li {list-style-type:disc; }
-ul {
-    margin-left: 20px;
-    margin-bottom: 1em;
-}
-
-#right-pane {
-    float: left;
-    margin-left: 75px;
-    width: 450px;
-}
-
-    #header {
-        height: 127px;
-        margin-bottom: 15px;
-        border: 1px solid white;
-    }
-        #title {
-            margin-top: 65px;
-            font-size: 48px;
-            font-weight: bold;
-            line-height: 0.9em;
-        }
-        #subtitle {
-            font-size: 14px;
-            color: #565656;
-        }
-
-    #content {
-        padding-top: 15px;
-/*        font-family: "Georgia", Helvetica, Arial;   */
-    }
-
-/* flash messages */
-    .error {
-        background: rgb(251, 227, 228);
-        border-color: rgb(251, 194, 196);
-        color: rgb(138, 31, 17);
-    }
-    .warning {
-        background: rgb(255, 246, 191);
-        border-color: rgb(255, 211, 36);
-        color: rgb(81, 71, 33);
-    }
-    .notice {
-        background: rgb(230, 239, 194);
-        border-color: rgb(198, 216, 128);
-        color: rgb(38, 68, 9);
-    }
-    .error, .warning, .notice {
-        border: 2px solid;
-        margin-bottom: 1em;
-        padding: 0.8em;
-    }
-
-/* for writings */
-    .entry {
-        margin-bottom: 1em;
-    }
-    .entry p { margin: 0.5em;}
-    .entry blockquote {
-        color: #777;
-        padding: 0.25em;
-    }
-    .ptime {
-        color: #999;
-        font-size: 80%;
-    }
-    .entry-title {
-        font-weight: bold;
-        display: inline;
-    }
-    .tags, .tags a {
-        font-size: small;
-        color: #999;
-    }
-
-/* for images */
-img {
-    margin: 1em 1em 1em 0;
-    border: 2px solid black;
-    box-shadow:5px 5px 10px rgba(0,0,0,0.5);
-    -webkit-box-shadow:5px 5px 10px rgba(0,0,0,0.5);
-    -moz-box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
-.img-caption {
-  font-size: x-small;
-  margin-top: -1.75em;
-  margin-bottom: 1.5em;
-}
-
-/* for projects page */
-#project-list dt {
-    font-size: 20px;
-}
-#project-list dd {
-    color: #777;
-}
-
-/* -------------- footer ---------------------------- */
-
-#footer {
-    font-size: 12px;
+header {
     text-align: center;
-    padding: 2em;
+}
+nav, footer {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
+                 "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 300;
+    margin: 2ex;
+}
+nav a {
+    font-size: 3em;
+    margin: 0.5ex;
+    text-decoration: none;
+}
+
+footer {
+    font-size: 0.75em;
+    text-align: center;
     color: #9c9c9c;
     clear: both;
 }
+
+
+/* -------------- body ---------------------------- */
+
+#main {
+}
+#main p {
+    font-family: Georgia, helvetica, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+code {
+    font-family: "Menlo", "Monaco", 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+}
+

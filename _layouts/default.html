@@ -1,47 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>{{ page.title }} &raquo; Bryan Summersett</title>
+    <title>{{ page.title }} | Bryan Summersett</title>
     <meta name="author" content="Bryan Summersett">
     <link href="http://feeds.feedburner.com/bryan-summersett" rel="alternate" title="Bryan Summersett" type="application/atom+xml" />
     <link rel="icon" href="/favicon.ico">
     <link rel="home index" href="/" type="text/html">
-  <link rel="me author" href="/about" type="text/html">
-  <link rel="stylesheet" href="/css/reset-min.css" type="text/css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="me author" href="/about" type="text/html">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="js/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-  <div id="main">
-    <div id="left-pane">
-      <a id="logo" href="/">home</a>
+    <header>
+      <img src="/images/title.png">
 
-      <div id="navigation">
-        <a class="nav-item" href="/index.html">posts</a>
-        <span class="nav-item">projects</span>
-          <a class="nav-item project-link" href="/projects/ijam.html" title="a collaborative music application for the iPhone" >iJam</a>
-          <a class="nav-item project-link" href="/projects/pdlib.html" title="an open source adapter for Pure Data to Cocoa Touch">pdlib</a>
-        <a class="nav-item" href="/about.html">about</a>
-      </div>
+      <nav>
+        <a href="/index.html">posts</a>
+        <a href="/projects.html">projects</a>
+        <a href="/about.html">about</a>
+      </nav>
 
-    </div>
+    </header>
 
-    <div id="right-pane">
-      <div id="header">
-        <h1 id="title">{{ page.title }}</h1>
-        <h2 id="subtitle">{{ page.subtitle }}</h2>
-      </div>
-
-      <div id="content">
-
+    <div role="main" id="main">
         {{ content }}
-
-      </div>
     </div>
-    <div id="footer">
+    <footer>
         &copy; 2012 Bryan Summersett
-    </div>
-  </div>
+    </footer>
 <!-- Google Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
