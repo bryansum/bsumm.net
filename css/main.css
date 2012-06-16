@@ -14,7 +14,7 @@ a, a:active, a:visited {
     color: black;
 }
 a:hover {
-    color: #999;
+    color: #0aadf4;
 }
 
 /* --------------------- header / footer ----------------------- */
@@ -26,6 +26,7 @@ header, footer {
     text-align: center;
     margin: 2em;
 }
+
 @media all and (min-device-width:768px) {
     header, footer {
         min-width: 560px;
@@ -34,6 +35,7 @@ header, footer {
         width: 560px;
     }
 }
+
 footer a {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     font-weight: 600;
@@ -51,16 +53,27 @@ footer {
 
 /* -------------- body ---------------------------- */
 
-#main {
+#main h1 {
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
+                 "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.5em;
+    line-height: 0;
+}
+#main article {
     font-family: Georgia, helvetica, sans-serif;
     font-size: 1.2em;
     line-height: 1.6;
+    margin: 0 auto 60px;
 }
 #main p {
-    margin: 0 auto 25px;
+    margin-bottom: 25px;
 }
+#main article:last-child {
+    margin-bottom: 0;
+}
+
 @media all and (min-device-width:768px) {
-    #main p {
+    #main article {
         width: 700px;
     }
 }
