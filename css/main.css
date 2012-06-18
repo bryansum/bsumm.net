@@ -1,17 +1,19 @@
 
 body {
     color:#212122;
-    background-color:#fff;
-    background-image: -webkit-linear-gradient(left, #ddd, #fff 38%);
-    background-image: -ms-linear-gradient(left, #ddd, #fff 38%);
-    background-image: -o-linear-gradient(left, #ddd, #fff 38%);
-    background-image: -moz-linear-gradient(left, #ddd, #fff 38%);
-    background-image: linear-gradient(left, #ddd, #fff 38%);
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(bottom, #eee, #fff 100%);
+    background-image: -ms-linear-gradient(bottom, #eee, #fff 100%);
+    background-image: -o-linear-gradient(bottom, #eee, #fff 100%);
+    background-image: -moz-linear-gradient(bottom, #eee, #fff 100%);
+    background-image: linear-gradient(bottom, #eee, #fff 100%);
     padding: 1em 0 1em;
+    font-family: Palatino, Georgia, helvetica, sans-serif;
+    font-size: 1em;
 }
 
 a, a:active, a:visited {
-    color: black;
+    color: #0084b7;
 }
 a:hover {
     color: #0aadf4;
@@ -27,6 +29,12 @@ header, footer {
     margin: 2em;
 }
 
+footer a, footer a:active, footer a:visited
+{
+    color: black;
+}
+
+
 @media all and (min-device-width:768px) {
     header, footer {
         min-width: 560px;
@@ -37,9 +45,8 @@ header, footer {
 }
 
 footer a {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-weight: 600;
-    font-size: 1.3em;
+    font-weight: bold;
+    font-size: 1em;
     margin-left: 1ex;
     text-decoration: none;
 }
@@ -53,32 +60,41 @@ footer {
 
 /* -------------- body ---------------------------- */
 
-#main h1 {
+article {
+    margin: 0 auto;
+}
+h1 {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
                  "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 1.5em;
-    line-height: 0;
+    font-size: 3em;
+    line-height: 0.5;
 }
-#main article {
-    font-family: Georgia, helvetica, sans-serif;
-    font-size: 1.2em;
+.ptime {
+    font-style: italic;
+}
+p {
     line-height: 1.6;
-    margin: 0 auto 60px;
-}
-#main p {
     margin-bottom: 25px;
+    text-align: justify;
 }
-#main article:last-child {
-    margin-bottom: 0;
+blockquote p {
+    font-size: 0.9em;
+}
+article > p:first-of-type:first-letter {
+    font-size: 2.5em;
+}
+article > p:first-of-type:first-line {
+    line-height: 1;
 }
 
 @media all and (min-device-width:768px) {
-    #main article {
+    article {
         width: 700px;
     }
 }
-
+/*
 code {
     font-family: "Menlo", "Monaco", 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
+*/
 
