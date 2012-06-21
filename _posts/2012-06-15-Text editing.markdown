@@ -3,15 +3,25 @@ title: Text editing
 layout: post
 ---
 
-Of the two essential instruments of software development, the mind of the developer and a software interface to translate our thoughts, we realize that only the latter is capable of being reasonably transformed given the technology of today. A typical developer begins and ends their day with the disarmingly simple text editor — the textual interface between the mind and body and the hardware and software machine. Characters are typed, translated by a series of transformations to machine instructions, and computers willingly obey. Unlike typical communication between humans or historically inflexible (read: *non-Turing complete*) industrial machines, with software, we are able to dictate the level of abstraction which we're willing to communicate to our machines, assuming we're capable of creating the necessary software. In essence, the language we choose to speak with a computer is always mutually agreed upon by the lowest common denominator, but unlike interpersonal communication, this denominator is completely determining by our *own* ability as a community to recapture our *own* created language and re-interpret it successfully.
+Of the two essential instruments of software development, the mind of the developer and a software interface to translate our thoughts, we realize that only the latter is capable of being reasonably transformed given the technology of today. A typical developer begins and ends their day with the dauntingly simple text editor — the textual interface between the mind and body and the hardware and software machine. Characters are furiously typed, translated by a series of transformations to machine instructions, and our patient computers willingly obey. Unlike communication with other humans, or historically inflexible (read: *non-Turing complete*) machines, we are capable of determining the precise level of abstraction which we're willing to communicate to our machines, assuming adequate ability. The language we choose to speak will always be mutually agreed upon by the lowest mutually understandable means, but unlike interpersonal communication, this denominator is completely determining by our *own* ability as a community to recapture our *own* created languages and re-interpret them successfully.
 
-Our computational tools: our text editors, our programming languages, our hardware input devices, are an artifact of our own ability to discover, conceptualize, adapt, and control computational language. The standardization on the keyboard, mouse, and text editor input paradigm of countless software developer professionals today should be examined in this light. Perhaps these all represent the apex of our ability to communicate effectively with machines to serve the end goals most pertinent to our world today. On the other hand, perhaps consider that our current input methods (by this, I mean hardware inputs, development environments, as well as programming languages) are but a local maxima of communication effectiveness, just enough to solve present day problems in enough different contexts so as to not needing to be fundamentally questioned. 
+Our computational tools: our text editors, our programming languages, our hardware input devices, are an artifact of our own ability to discover, conceptualize, adapt, and control computational language. The standardization on the keyboard, mouse, and text editor input paradigm of countless software developer professionals today should be examined in this light. Perhaps these all represent the apex of our ability to communicate effectively with machines to serve the end goals most pertinent to our world today. On the other hand, perhaps  our current computational tools — our hardware inputs devices, our hardware systems, our operating systems, our software development environments, as well as programming languages — are at a local maxima of effectiveness, adequate for  the present, promulgated due of familiarity, and showing signs of their age in a world much different than the one their were created in. Of course, the balance between these two views shifts every day with the introduction of new technologies. The beautiful thing is is we are able to change it ourselves. 
 
 ## Forms of interaction
 
-The *form* of an input indicates its capacity to change; if we are to take a systems view of the problem, this is determined by its relation to its inputs and outputs. As mentioned previously, the fundamental forms of communication for man-machine software interaction include: hardware input devices (HIDs), the development environment, and programming languages. Physical / hardware input devices are created in response to human need: ergonomic factors and improving cognition by way of proper affordances, and the type of their output is partially determined by the capabilities of the corresponding machine. Development environments (the "computer" itself and its operating system) comprise both the hardware a machine runs on as well as the underlying software platform layers in which communication occurs; the form of this is largely determined of the input hardware's physical form and means of interaction and the output largely determined by the nature of the software we choose to run on it. Programming languages are in turn determined by their input, the context in which they are run (the host operating system) and their output, the side effects they produce.
+The *form* of an input dictates its capacity to change. To take a systems view of the problem, this form is determined by its relation to its inputs and outputs. As mentioned previously, the fundamental forms of communication for man-machine programming include: hardware input devices (HIDs), the hardware system, the operating system, software development environments, and our programming languages. For the sake of this discussion, I choose to use physical input devices as a lens on the history of the development of programming tools, text editors, as it is my personal belief that examining this relationship can impart some wisdom on how well our tools can and have been serving us.
 
-The physical input devices of the system are, for better or worse, subject to the  well-established principles of a market economy, and comprehensive and paradigmatic change is largely driven by the whims of capital-instensive market players. In part due to this, the keyboard interface, the QWERTY layout, has changed amazingly little the past 100 years (its internals, however, have -- see the [Selectric](http://en.wikipedia.org/wiki/IBM_Selectric_typewriter) for an enlightening video of one of the first A/D conversions for terminals). Today, in the age of smartphones, we see Apple driving the change to touch-, and increasingly speech-based interfaces. Going back further, we say the invention of the mouse with the development of the mouse via Douglas Englebart at Xerox PARC, and saw Apple drive widespread adoption of the mouse with the introduction of the Apple II. We also see Microsoft promoting the Kinect as a novel input mechanism for its entertainment hardware, the XBox 360. Of course, other interfaces to the computer existed during the same time, albeit mostly as research. Pen-based interfaces were used very early on in the development of computer interfaces; in fact, [Ivan Sutherland's Sketchpad](http://www.youtube.com/watch?v=mOZqRJzE8xg)'s light pen predated the use of mice.
+Punch cards. Teletypewriters. Terminals. Light pens. Keyboards. Mice. Roller balls. Joysticks. Gamepads. Multi-touch displays. Microphones. Baby monitors. Trackpads. Wacom tablets. Video cameras. Wiimotes. All computer input devices are created in response to human needs and ergonomics. 
+
+Computer input devices have been largely dependent on the market success of their associated platform, as they have been traditionally tightly coupled with their platform's design. (With the rise of community-funded consumer electronics like the Pebble watch and the Rasperry Pi, however, perhaps we're in for a disruption in this field as well. Look no further than the [LeapMotion](http://leapmotion.com/), which has no platform to speak of.) No better example of this is the amazingly resilient QWERTY keyboard, which has seen little change in design throughout the past 100 years. Today, in the era of smartphones, we see Apple driving the change to touch interfaces via its iOS devices, and speech-based interfaces via Siri (although the latter has yet to stand the test of time.) In the 90's, Palm, another quintessential disruptor, drove the widespread adoption of stylus-input devices to consumers. In 1968, with the invention of the mouse by Douglas Englebart, and later refined at Xerox PARC, Apple successfully included the mouse on its Apple II, and led adoption of this novel input. Apple's iPod was designed around a novel input form for an MP3 player: a scroll wheel; the iPhone around multi-touch. Today, we see Microsoft moving into the game as well promoting the Kinect's depth sensors and location-aware microphones as an  input mechanism for its entertainment hardware. 
+
+(Possibly add a timeline of input devices here?)
+
+Of course, other interfaces to the computers have been researched over the years, but have typically remained obscure. Pen-based input interfaces have had a [surprisingly long history](http://en.wikipedia.org/wiki/Pen_computing). A remarkable example of this was in the early 60's with [Ivan Sutherland's Sketchpad](http://www.youtube.com/watch?v=mOZqRJzE8xg)'s, which utilizes a light pen on a electrostatic display. Examples of the RAND tablet, an little-mentioned research project, introduced the notion of an entirely graphically edited visual programming language, and one of the first gesture-based systems. This was also pen-based. The Apple Newton was also the precursor to much of the pen-based handwriting technology we use today, and in fact the Windows Mobile-based handwriting devices were rumored to use its handwriting recognition technology. Wacom tablets have seen success in domain-specific fields like computer-based fine arts.
+
+ (its internals, however, have -- see the [Selectric](http://en.wikipedia.org/wiki/IBM_Selectric_typewriter) for an enlightening video of one of the first A/D conversions for terminals)
+
+Development environments (the "computer" itself and its operating system) comprise both the hardware a machine runs on as well as the underlying software platform layers in which communication occurs; the form of this is largely determined of the input hardware's physical form and means of interaction and the output largely determined by the nature of the software we choose to run on it. Programming languages are in turn determined by their input, the context in which they are run (the host operating system) and their output, the side effects they produce.
 
 Changes in the hardware and software development environment were also largely in accordance with industry demand. In order to keep focus on the effects this had on human-computer interfaces, we'll focus on a few key paradigms. The first, the electric typewriter, or teletype (TTy) interface, was introduced in order to augment the then-aging notion of printing punch cards via telegraphy with direct communication to external systems. Often, these teletypes didn't contain processors themselves, and instead would typically serve as a "dumb" terminal to an external mainframe; however, unlike the terminals of day, many of these would print output on paper. This environment was the birthplace of the B and C languages, [leading to the development of Unix](http://cm.bell-labs.com/who/dmr/chist.html). In fact, the initial Unix file system and its user utilities were developed using GECOS assembly (the base language / operating system for the GE-635, the host for the Multics environment at Bell Labs), and [transliterating to the PDP-7 using paper tape](http://cm.bell-labs.com/cm/cs/who/dmr/hist.html).
 
@@ -19,9 +29,9 @@ As time went on, more complex TTys added support for [ASCII escape sequences](ht
 
 Around the same time, in a research setting in Palo Alto, the graphic user interface was being pioneered, thanks in large part to the development of the bitmap interface, a seemingly unthinkable technical hurdle due to the hardware constraints of the time. Xerox PARC was the birthplace of today's computational environment, and whose importance we should not underestimate, although it took Bill Gates and Steve Jobs to realize this fact. PARC's Alto, the prototypical personal computer, introduced the use of object-oriented software (via Smalltalk), a virtual machine runtime, Ethernet, bitmapped displays, and using the mouse as an input device. However, until the release of Microsoft Windows nearly a decade later (and the Apple Macintosh, to a lesser extent), most computer users had not experienced GUIs as an everyday computing experience, much less as a software development environment. 
 
-Along with advances in our hardware, advancements in the nature of software development environments came accordingly, in many cases because of the necessity to make up for [discrepancies between developing and editing programming languages on punch-card paper vs. "on-line" mode](http://en.wikipedia.org/wiki/Text_Editor_and_Corrector). A survey of the state of the art in ["on-line" text editing circa 1971](http://dl.acm.org/citation.cfm?id=356591) illustrates the introduction of QED, TECO, a Selectric teletypewriter, and interestingly, a tablet-based editor by folks at CMU. Notably absent is `ed`, a Ken Thompson creation went on to be the dominant line editor for Unix, and was notable for being an interactive editor.  Thompson's `ed`, in turn, was a reworking of the original [QED](http://cm.bell-labs.com/cm/cs/who/dmr/qedman.pdf) which introduced interactive text editing concepts like text buffers, rather than working directly on a file, and regular expressions as a means of pattern matching input and output text to transform. These pieces of software could and often were run in non-interactive mode, due in part to the fact that often times programming was persisted using paper tape. Over time, individual commands for ed became more specialized: grep for the matching portion, sed for substituting text, and the like, more in accordance with the Unix principles of being a collection of small composable tools.
+Along with advances in our hardware, advancements in the nature of software development environments came accordingly, in many cases because of the necessity to make up for [discrepancies between developing and editing programming languages on punch-card paper vs. "on-line" mode](http://en.wikipedia.org/wiki/Text_Editor_and_Corrector). A survey of the state of the art in ["on-line" text editing circa 1971](http://dl.acm.org/citation.cfm?id=356591) illustrates the introduction of QED, TECO, a Selectric teletypewriter, and interestingly, a tablet-based editor by folks at CMU. Notably absent is `ed(1)`, a Ken Thompson creation went on to be the de factor line editor for Unix. Thompson's `ed` is [described better elsewhere](http://blog.sanctum.geek.nz/actually-using-ed/), but was a modal line-oriented editing language, basically a reworking of the original [QED](http://cm.bell-labs.com/cm/cs/who/dmr/qedman.pdf), which introduced interactive text editing concepts like text buffers, rather than working directly (raw) on a file, and regular expressions as a means of pattern matching input and output text to transform. Although decidedly interactive, these pieces of software could and often were run equally well as scripts in non-interactive mode, due in part to the fact that often times programming was persisted using paper tape. Over time, individual commands for ed became more specialized: `grep(1)` for the matching portion, `sed(1)` for substituting text, and the like, more in accordance with the Unix principles of being a collection of small composable tools.
 
-TECO was an MIT project started in 1962, was more arcane in that it had a smaller set of non-interactive instructions, but was Turing-complete and was used successfully to develop higher-level macros on top of its base system, extending its lifetime far past what would be expected of decades-old software in a university setting. 1964, TECO was altered to contain a "real-time" mode which provided an interactive display. After more than 10 years, in 1976, TECO had been sufficienty extended so as to produce the [first versions of Emacs](http://www.jwz.org/doc/emacs-timeline.html), which was  called as such due to its reputation for being a set of "Editor MACros" for the TECO editor. 
+TECO was an MIT project started in 1962, in a time when punch card systems were the norm. Its original use was to automate the [Friden Flexowriter](http://en.wikipedia.org/wiki/Friden_Flexowriter), whose "editing" consisted of the manual process of rearranging and adding punch cards. It again was made to minimize the time spent using a PDP-1, where a user would create a "correction tape", likely a series of TECO commands, for the TECO process to read and correspondingly print out an edited version. This was known as operating in "batch" mode. Eventually, the advantages of online editing outweighed the difficulty of offline editing, and after some time TECO was being used in a teletype-based format similar to `ed`. In 1964, TECO was implemented on a PDP-6, adding support for editing visually on a visual terminal. TECO had the fortune of being Turing-complete and was used successfully to develop higher-level macros on top of its base system, extending its lifetime far past what would be expected of decades-old software in a university setting. 1964, TECO was altered to contain a "real-time" mode which provided an interactive display. After more than 10 years, in 1976, TECO had been sufficienty extended so as to produce the [first versions of Emacs](http://www.jwz.org/doc/emacs-timeline.html), which was  called as such due to its reputation for being a set of "Editor MACros" for the TECO editor. 
 
 Innumerable forces then shaped the design of our programming languages, and advances in the lower layers of our dependency hierarchy undoubtedly played a role in their success. Fortran was developed during the age of punch cards, and arguably one of the first examples of a higher-level programming language. One might assume its structed form led to easier comprehension by less-experienced programmers, and this was the main factor in its success, but this may be taking a simplified view: one of the main benefits of higher-level abstractions initially was its ability to decrease the number of punch cards required to implement an equivalent program [by a factor of 20](http://en.wikipedia.org/wiki/Fortran) in many cases. 
 
@@ -49,111 +59,41 @@ Mouse and keyboard interfaces, the dominant user interface paradigms of software
 It's interesting to note that evolutions tools that people use can often extend the lifetime of an existing interface, turning what would seem like an intractable form into something easily digestable. An admittedly biased example here would be in developing software using Java; many expert developers today have come to rely on integrated IDEs like Eclipse to aid the developer in understanding how a piece of software works together. How successful would the ASCII notation for programming languages has existed since the 50's with the introduction of Backus-Normal-Form, and has changed relatively little since the 
 
  to the myriad contexts in which software is
-created. From large corporations seeking to homogenize tooling to benefit from
-scaling effects, to individuals looking to hack together scripts to get a remote
-server working, to scientific workers transliterating an algorithm for their
-next paper, software developers require tools to do their job efficiently. 
+created. From large corporations seeking to homogenize tooling to benefit from scaling effects, to individuals looking to hack together scripts to get a remote server working, to scientific workers transliterating an algorithm for their next paper, software developers require tools to do their job efficiently. 
 
-This efficiency can be quantified in a number of ways; an intuitive measure is
-one of essential and incidental complexity, wherein a given tool would seek to
-minimize the amount of incidental complexity inherent in using the tool. 
-to  depending on the
-problem to be solved and the domain in which it exists.
+This efficiency can be quantified in a number of ways; an intuitive measure is one of essential and incidental complexity, wherein a given tool would seek to minimize the amount of incidental complexity inherent in using the tool.  to  depending on the problem to be solved and the domain in which it exists.
 
-Programmers depend on text editors. Often times, the only thing that stands in
-the way from pure thought stuff (Mythical Man month) and implementation is the
-deceptively simple practice of inputting a sequence of characters into a text
-editor, line after line.
+Programmers depend on text editors. Often times, the only thing that stands in the way from pure thought stuff (Mythical Man month) and implementation is the deceptively simple practice of inputting a sequence of characters into a text editor, line after line.
 
-As much as the output of our programs has increased, the mode in which we create
-them has been (perhaps) suprisingly conservative. There's probably an argument
-to be made about old dogs and new tricks here somewhere.
+As much as the output of our programs has increased, the mode in which we create them has been (perhaps) surprisingly conservative. There's probably an argument to be made about old dogs and new tricks here somewhere.
 
-It's interesting to note that the text editors many use today have roots going
-back almost 50 years. The words `tty`, teletypewriter come from a long history
-of electronic typewriters. The reason we have support for both a line feed and a
-carriage return in our ASCII table from from this lineage.
+It's interesting to note that the text editors many use today have roots going back almost 50 years. The words `tty`, teletypewriter come from a long history of electronic typewriters. The reason we have support for both a line feed and a carriage return in our ASCII table from from this lineage.
 
 The state of the art in the 70's, at Bell Labs, where Ken Thompson 
 was translating BCPL code to B to C on teletype machines.
 http://cm.bell-labs.com/who/dmr/chist.html
-This line-oriented programming style is still largely the norm today in many
-circles; leading hackers to this day often rely on command-line editors and a
-combination of shell scripts for their environment as their state-of-the-art
-tool. I believe that these tools being so widely portable, consistent, and
-well-tested naturally leads these to dominate the space, and leads one down
-a much less stress-laden path. However, programming is primarily a social and
-trade-based activity, meaning that learning from others the tools to use is
-still a primary motivator (citations?), which would also imply some
-conservatism. See the use of painting techniques, film, etc., for more
-background on trends in means of production.
+This line-oriented programming style is still largely the norm today in many circles; leading hackers to this day often rely on command-line editors and a combination of shell scripts for their environment as their state-of-the-art tool. I believe that these tools being so widely portable, consistent, and well-tested naturally leads these to dominate the space, and leads one down a much less stress-laden path. However, programming is primarily a social and
+trade-based activity, meaning that learning from others the tools to use is still a primary motivator (citations?), which would also imply some conservatism. See the use of painting techniques, film, etc., for more background on trends in means of production.
 
-The absolutely essential quality of programming in a text-based language in this
-day and age would imply there being movements to improve the state of the
-art. An interesting question to ask in this sense is in what measurable ways one can
-improve their editor. One easy way to determine the essentials of a text editor
-is to first use an extremeley basic one: coding in Notepad.
+The absolutely essential quality of programming in a text-based language in this day and age would imply there being movements to improve the state of the art. An interesting question to ask in this sense is in what measurable ways one can improve their editor. One easy way to determine the essentials of a text editor is to first use an extremely basic one: coding in Notepad.
 
-The first thing we should understand is the coupling between text editors and
-the programming environment they were created for; Alan Kay understood this
-quite well when he combined the editor and the runtime environment of Smalltalk
-into one and the same piece of software. This trend continues today in the form of 
-Squeak and Scratch, two IDEs utilizing the "image" concept.
+The first thing we should understand is the coupling between text editors and the programming environment they were created for; Alan Kay understood this quite well when he combined the editor and the runtime environment of Smalltalk into one and the same piece of software. This trend continues today in the form of  Squeak and Scratch, two IDEs utilizing the "image" concept.
 
-
-
-Vim was a successor to `vi`, a successor to `ed`. Reading the `vi` wiki page is very enlightening
-, and serves to show that vi was actually an amalgam of an improvement to the
+Vim was a successor to `vi`, a successor to `ed`. Reading the `vi` wiki page is very enlightening, and serves to show that vi was actually an amalgam of an improvement to the
 original `ed` called `em`(http://www.eecs.qmul.ac.uk/~gc/history/index.html),
-adding line-at-a-time raw mode editing, allowing people to see the effect of
-editing in real time, some Rob Pike's `ed` editor experiments, and `bravo`. 
-Vim being modal is still a defining characteristic to this day, as many designers argue for the removal of such a system from most user interface decisions (No modes guy).
+adding line-at-a-time raw mode editing, allowing people to see the effect of editing in real time, some Rob Pike's `ed` editor experiments, and `bravo`. Vim being modal is still a defining characteristic to this day, as many designers argue for the removal of such a system from most user interface decisions (No modes guy).
 
-Text editor and corrector (TECO) was a precursor to Emacs, and also an editor
-with quite a lifespan of its own http://en.wikipedia.org/wiki/Text_Editor_and_Corrector.
-The fact that searching operations for characters was motivated by the fact that
-there were no line numbers for the code itself internally. The idea of making a
-correction tape was made in order to more efficiently utilize the
-school's PDP-1 computer for time-sharing purposes, so that someone wouldn't have
-to sit at the computer continually to work. When running TECO, one could simply
-write out the appropriate commands to the machine at the appropriate time in
-high speed. Later on, debugging this became an issue and online editing became
-the norm, although much like `ed` there had to be an explicit command to print
-lines out. By 1964, there was a screen display for the TECO system to support an
-editing buffer for the next command. Note that, in this case, although the means
-of visualizing code had changed, the input method lagged.
-Videos here: http://c2.com/cgi/wiki?TecoEditor
+Text editor and corrector (TECO) was a precursor to Emacs, and also an editor with quite a lifespan of its own http://en.wikipedia.org/wiki/Text_Editor_and_Corrector.
+The fact that searching operations for characters was motivated by the fact that there were no line numbers for the code itself internally. The idea of making a correction tape was made in order to more efficiently utilize the school's PDP-1 computer for time-sharing purposes, so that someone wouldn't have to sit at the computer continually to work. When running TECO, one could simply
+write out the appropriate commands to the machine at the appropriate time in high speed. Later on, debugging this became an issue and online editing became the norm, although much like `ed` there had to be an explicit command to print lines out. By 1964, there was a screen display for the TECO system to support an editing buffer for the next command. Note that, in this case, although the means
+of visualizing code had changed, the input method lagged. Videos here: http://c2.com/cgi/wiki?TecoEditor
 
-Emacs came from land of Lisp: MIT, with Guy Steele and Richard Greenblatt
-providing the immediate predecessor. http://www.jwz.org/doc/emacs-timeline.html
-Emacs came along shortly afterwards, with Richard Stallman being the primary
-author. Emacs was first developed in the AI lab at MIT around 1977
-(http://www.multicians.org/mepap.html#secii). Originally, Emacs was composed of two separate 
-screens, where one would be typed editor commands and the other the region of
-the text being edited. This would largely be considered in the realm of
-quasi-mode operation; only with the second version was there "real-time"
-editing, where, for instance, deleting a character (`Ctl-D`) would actually lead
-to the removal of the character as it happened. This, arguably, could have only
-resulted from a world where display terminals were being the norm, as Nicholas
-Negroponte writes: http://dspace.mit.edu/bitstream/handle/1721.1/16038/07332831.pdf?sequence=1
+Emacs came from land of Lisp: MIT, with Guy Steele and Richard Greenblatt providing the immediate predecessor. http://www.jwz.org/doc/emacs-timeline.html Emacs came along shortly afterwards, with Richard Stallman being the primary author. Emacs was first developed in the AI lab at MIT around 1977 (http://www.multicians.org/mepap.html#secii). Originally, Emacs was composed of two separate screens, where one would be typed editor commands and the other the region of the text being edited. This would largely be considered in the realm of quasi-mode operation; only with the second version was there "real-time" editing, where, for instance, deleting a character (`Ctl-D`) would actually lead
+to the removal of the character as it happened. This, arguably, could have only resulted from a world where display terminals were being the norm, as Nicholas Negroponte writes: http://dspace.mit.edu/bitstream/handle/1721.1/16038/07332831.pdf?sequence=1
 
-A fork by Dan Weinreb was made soon after for the Lisp Machine exclusively,
-  making EINE the first Lisp-based Emacs implementation.
-  http://www.heeltoe.com/retro/mit/mit_cadr_lmss.html
+A fork by Dan Weinreb was made soon after for the Lisp Machine exclusively, making EINE the first Lisp-based Emacs implementation. http://www.heeltoe.com/retro/mit/mit_cadr_lmss.html Eclipse was created by IBM after, perhaps unsurprisingly, patterned after a commercialized version of a Smalltalk development environment called VisualAge.
 
-Eclipse was created by IBM after, perhaps unsuprisingly, patterned after a
-commercialized version of a Smalltalk development environment called VisualAge.
-
-Over time, different people have spent large quantities of time in trying
-to provide language-specific or environment-specific features to editors in
-order to aid the creational process, assuming that with a more context-aware
-programming environment one can increase the productivity of one's work. This is
-also the premise behind a number of increasing movement for a more dynamic text
-editing environment ala LiveTable / Bret Victor's code editor. 
-
-It's worth exploring reasons why people would feel opposed to increasing the
-complexity of their tools. A number of well known and well-respected programming authors
-refuse to use ID
+Over time, different people have spent large quantities of time in trying to provide language-specific or environment-specific features to editors in order to aid the creational process, assuming that with a more context-aware programming environment one can increase the productivity of one's work. This is also the premise behind a number of increasing movement for a more dynamic text editing environment ala LiveTable / Bret Victor's code editor. 
 
 Intentional programming
 
