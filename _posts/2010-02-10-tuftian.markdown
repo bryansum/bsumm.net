@@ -1,0 +1,10 @@
+---
+layout: post
+title: Tuftian
+---
+
+If you're at all interested in graphic design, I'd highly recommend picking up a copy of Edward Tufte's [Visual Display of Quantitative Information](http://www.amazon.com/Visual-Display-Quantitative-Information/dp/096139210X). I just got done reading through it after having set it aside for awhile. It concisely highlights features of *great* graphic design. He wrote it pre-information age, but I found that it translated very well to good design for the web and computer interfaces.
+
+One of the main ideas is that great graphic design reveals the greatest number of ideas in the shortest time, with the least ink, in the smallest space. He provides clear examples for each point he makes.
+
+In any case, it's a good coffee table book.
