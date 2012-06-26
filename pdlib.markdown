@@ -9,7 +9,7 @@ title: pdlib
 
 ### [github.com/bryansum/pdlib](http://github.com/bryansum/pdlib)
 
-The need for pdlib came from the development of [iJam](/project/ijam.html), which needed an audio back end. After looking for existing solutions, few synthesizers were free to use in commercial projects, and those that available were typically limited in the sounds they could produce. I was familiar with [Rjdj](http://rjdj.me) and their decision to use [Pure Data](http://crca.ucsd.edu/~msp/software.html) as their audio synthesizer, but they hadn't opted to publicly release their port.
+The need for pdlib came from the development of [iJam](/ijam.html), which needed an audio back end. After looking for existing solutions, few synthesizers were free to use in commercial projects, and those that available were typically limited in the sounds they could produce. I was familiar with [Rjdj](http://rjdj.me) and their decision to use [Pure Data](http://crca.ucsd.edu/~msp/software.html) as their audio synthesizer, but they hadn't opted to publicly release their port.
 
 One of the goals of pdlib was to minimize changes to vanilla Pure Data; as such, only the command-line parsing and the audio hardware interface have been rewritten. It is based on Pure Data v0.42-5.
 

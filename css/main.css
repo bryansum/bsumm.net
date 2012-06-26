@@ -13,9 +13,27 @@ body {
     font-size: 1em;
 }
 
+/* code formatting stolen from github.com */
 code {
     font-family: "Menlo", 'Bitstream Vera Sans Mono', "Monaco", 'DejaVu Sans Mono', monospace;
 	font-size: 0.75rem;
+	white-space: nowrap;
+	border: 1px solid #eaeaea;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	margin: 0 2px;
+	padding: 0 5px;
+}
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	overflow: auto;
+	padding: 6px 10px;
+	border-radius: 3px;
+}
+pre code {
+	border: 0;
+	background-color: none;
 }
 
 a, a:active, a:visited {
