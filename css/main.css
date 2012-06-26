@@ -4,10 +4,10 @@ html {
 body {
     color:#212122;
     background-image: -webkit-linear-gradient(top, #eee, #fff 300px);
-    background-image: -ms-linear-gradient	 (top, #eee, #fff 300px);
-    background-image: -o-linear-gradient	 (top, #eee, #fff 300px);
-    background-image: -moz-linear-gradient	 (top, #eee, #fff 300px);
-    background-image: linear-gradient		 (top, #eee, #fff 300px);
+    background-image: -ms-linear-gradient    (top, #eee, #fff 300px);
+    background-image: -o-linear-gradient     (top, #eee, #fff 300px);
+    background-image: -moz-linear-gradient   (top, #eee, #fff 300px);
+    background-image: linear-gradient        (top, #eee, #fff 300px);
     padding: 1em 0 1em;
     font-family: Palatino, Georgia, helvetica, sans-serif;
     font-size: 1em;
@@ -16,24 +16,24 @@ body {
 /* code formatting stolen from github.com */
 code {
     font-family: "Menlo", 'Bitstream Vera Sans Mono', "Monaco", 'DejaVu Sans Mono', monospace;
-	font-size: 0.75rem;
-	white-space: nowrap;
-	border: 1px solid #eaeaea;
-	background-color: #f8f8f8;
-	border-radius: 5px;
-	margin: 0 2px;
-	padding: 0 5px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin: 0 2px;
+    padding: 0 5px;
 }
 pre {
-	background-color: #f8f8f8;
-	border: 1px solid #ccc;
-	overflow: auto;
-	padding: 6px 10px;
-	border-radius: 3px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
 }
 pre code {
-	border: 0;
-	background-color: none;
+    border: 0;
+    background-color: none;
 }
 
 a, a:active, a:visited {
@@ -79,7 +79,18 @@ footer {
 
 #main, footer {
     margin: 0 auto;
-	padding: 0 15px;
+    padding: 0 15px;
+}
+
+/* -------------- posts ---------------------------- */
+ul#posts li {
+	list-style-type: none;
+}
+ul#posts .ptime {
+	display: inline-block;
+	width: 6em;
+	text-align: right;
+	margin: 0 1em;
 }
 
 /* -------------- body ---------------------------- */
@@ -89,11 +100,12 @@ h1 {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
                  "Helvetica Neue", Helvetica, sans-serif;
     font-size: 3em;
-    line-height: 0.5;
+    line-height: 1;
 }
 .ptime {
     font-style: italic;
 }
+
 p {
     line-height: 1.6;
     margin-bottom: 25px;
@@ -109,25 +121,25 @@ article > p:first-of-type:first-line {
     line-height: 1;
 }
 figcaption {
-	font-style: italic;	
-	font-size: 0.9em;
-	margin: 1ex;
+    font-style: italic; 
+    font-size: 0.9em;
+    margin: 1ex;
 }
 
 #main img {
-	box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
-	border-radius: 5px;
-	margin: 15px;
+    box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    margin: 15px;
 }
 #main img:only-of-type {
-	margin: 0;
+    margin: 0;
 }
 
 #main img[style="float: left;"] {
-	margin-left: 0;
+    margin-left: 0;
 }
 #main img[style="float: right;"] {
-	margin-right: 0;
+    margin-right: 0;
 }
 
 
