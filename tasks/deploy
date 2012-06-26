@@ -1,4 +1,4 @@
 #!/bin/sh -e
-#jekyll && rsync -avz --delete _site/ bsumm.net:/srv/www/bsumm.net/public_html
-jekyll && s3cmd sync --delete-removed _site/ s3://www.bsumm.net --verbose
+jekyll && rsync -avz --delete _site/ bsumm.net:/srv/www/bsumm.net/public_html
+#jekyll && s3cmd sync --delete-removed _site/ s3://www.bsumm.net --verbose
 

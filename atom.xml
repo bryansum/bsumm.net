@@ -5,8 +5,8 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Bryan Summersett</title>
- <link href="http://www.bsumm.net/atom.xml" rel="self"/>
- <link href="http://www.bsumm.net/"/>
+ <link href="http://bsumm.net/atom.xml" rel="self"/>
+ <link href="http://bsumm.net/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://bsumm.net/</id>
  <author>
