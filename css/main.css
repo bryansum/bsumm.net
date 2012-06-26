@@ -1,15 +1,21 @@
-
+html {
+    background-color: #fff;
+}
 body {
     color:#212122;
-    background-color: #fff;
-    background-image: -webkit-linear-gradient(bottom, #eee, #fff 100%);
-    background-image: -ms-linear-gradient(bottom, #eee, #fff 100%);
-    background-image: -o-linear-gradient(bottom, #eee, #fff 100%);
-    background-image: -moz-linear-gradient(bottom, #eee, #fff 100%);
-    background-image: linear-gradient(bottom, #eee, #fff 100%);
+    background-image: -webkit-linear-gradient(top, #eee, #fff 300px);
+    background-image: -ms-linear-gradient	 (top, #eee, #fff 300px);
+    background-image: -o-linear-gradient	 (top, #eee, #fff 300px);
+    background-image: -moz-linear-gradient	 (top, #eee, #fff 300px);
+    background-image: linear-gradient		 (top, #eee, #fff 300px);
     padding: 1em 0 1em;
     font-family: Palatino, Georgia, helvetica, sans-serif;
     font-size: 1em;
+}
+
+code {
+    font-family: "Menlo", 'Bitstream Vera Sans Mono', "Monaco", 'DejaVu Sans Mono', monospace;
+	font-size: 0.75rem;
 }
 
 a, a:active, a:visited {
@@ -20,6 +26,12 @@ a:hover {
 }
 
 /* --------------------- header / footer ----------------------- */
+
+@media all and (min-device-width:768px) {
+    #main, footer {
+        max-width: 700px;
+    }
+}
 
 header, footer {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
@@ -34,16 +46,6 @@ footer a, footer a:active, footer a:visited
     color: black;
 }
 
-
-@media all and (min-device-width:768px) {
-    header, footer {
-        min-width: 560px;
-    }
-    footer {
-        width: 560px;
-    }
-}
-
 footer a {
     font-weight: bold;
     font-size: 1em;
@@ -52,17 +54,19 @@ footer a {
 }
 
 footer {
-    margin: 0 auto;
     color: #777;
     clear: both;
     text-align: right;
 }
 
+#main, footer {
+    margin: 0 auto;
+	padding: 15px;
+}
+
 /* -------------- body ---------------------------- */
 
-#main {
-    margin: 0 auto;
-}
+
 h1 {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
                  "Helvetica Neue", Helvetica, sans-serif;
@@ -92,12 +96,6 @@ figcaption {
 	margin: 1ex;
 }
 
-@media all and (min-device-width:768px) {
-    #main {
-        width: 700px;
-    }
-}
-
 #main img {
 	box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
 	border-radius: 3px;
@@ -113,9 +111,6 @@ figcaption {
 #main img[style="float: right;"] {
 	margin-right: 0;
 }
-/*
-code {
-    font-family: "Menlo", "Monaco", 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
-}
-*/
+
+
 
