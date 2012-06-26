@@ -3,16 +3,20 @@ layout: default
 title: iJam
 ---
 
-iJam is a mobile application for the iPhone which facilitates networked, collaborative music making via musical "sessions." Users can play either play an instrument by themselves or "share" playing an instrument. Either way, this is then heard by all members of the session. It features multiple virtual instruments playable via multi-touch and gesture-based input mechanisms (accelerometer, etc). iJam is designed to make it effortless to quickly collaborate with others.
+# iJam
 
+*A collaborative music application for the iPhone.*
 
-To start, a player can either create a new session or join an existing one. Sessions can be configured to be Wifi-based or Bluetooth-based, with both using Apple's Bonjour service to broadcast their presence.
+iJam is a collaborative synthesizer for the iPhone, allowing for ad-hoc musical "sessions." Users can play either play an instrument in isolation or multiple players can play simultaneously. Either way, all music played is heard by all other members. It features multiple instruments via simple touch interfaces, and may optionally include gesture-input mechanisms (accelerometer, etc). iJam makes it effortless to do spontaneous musical collaboration with others.
 
-<img style="float: left;" src="/images/ij-main.png" alt="Figure 1: iJam main application screen" />
+To begin, a player can either create a new session or join an existing one. Using Apple Bonjour service, it's straightforward to determine who's located nearby. Sessions can be configured to be Wifi-based or Bluetooth-based, with both using Apple's Bonjour service to broadcast their presence.
+
+<figure>
+<img src="/images/ij-main.png" alt="Figure 1: iJam main application screen" />
+<figcaption>Figure 1: iJam main application screen</figcaption>
+</figure>
 
 From here, the user can select from (currently) a few instruments, including `drumelectro`, `rhodeybass`, and `metronome`. These are synthesized using <a href="http://crca.ucsd.edu/~msp/software.html">Pure Data</a> software. iJam uses this extensively for its audio back end, and Pure Data's port to the iPhone is available as the open-sourced <a href="/projects/pdlib">pdlib</a> on this site.</p>
-
-<img src="/images/ij-drums.png" style="float: right;" alt="Figure 2: iJam simplistic 'drumelectro' interface. Drums are movable. Note the timeline above." />
 
 iJam can currently be used in two different "modes": <em>sequenced</em> or <em>free-form</em>.
 The two modes can be toggled by selecting the red record button on the
@@ -28,5 +32,10 @@ session creation).
 Once connected, clients use UDP multicasting to send <a href="http://opensoundcontrol.org/">OSC</a>
 messages directly to other session participants.
 
-I worked on this as part of a senior design class at the University of Michigan.
+<figure>
+<img src="/images/ij-drums.png" alt="Figure 2: iJam simplistic 'drumelectro' interface. Drums are movable. Note the timeline above." />
+<figcaption>Figure 2: iJam 'drumelectro' interface. Drums are movable. Note the timeline above.</figcaption>
+</figure>
+
+I worked on this as part of a senior project at the University of Michigan.
 

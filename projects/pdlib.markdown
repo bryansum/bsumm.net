@@ -1,54 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>pdlib &raquo; Bryan Summersett</title>
-	<meta name="author" content="Bryan Summersett">
-	<link href="http://feeds.feedburner.com/bryan-summersett" rel="alternate" title="Bryan Summersett" type="application/atom+xml" />
-	<link rel="icon" href="/favicon.ico">
-	<link rel="home index" href="/" type="text/html">
-  <link rel="me author" href="/about" type="text/html">
-  <link rel="stylesheet" href="/css/reset-min.css" type="text/css" media="screen" charset="utf-8">
-  <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" charset="utf-8">
-</head>
-<body>
-  <div id="main">
-    <div id="left-pane">
-      <a id="logo" href="/">home</a>      
+---
+layout: default
+title: pdlib
+---
 
-      <div id="navigation">
-        <a class="nav-item" href="/index.html">posts</a>
-        <span class="nav-item">projects</span>
-          <a class="nav-item project-link" href="/projects/ijam.html" title="a collaborative music application for the iPhone" >iJam</a>
-          <a class="nav-item project-link" href="/projects/pdlib.html" title="an open source adapter for Pure Data to Cocoa Touch">pdlib</a>
-        <a class="nav-item" href="/about.html">about</a>
-      </div>
+# pdlib
 
-    </div>
-    
-    <div id="right-pane">
-      <div id="header">
-        <h1 id="title">pdlib</h1>
-        <h2 id="subtitle">an open source port of Pure Data to the iPhone.</h2>
-      </div>
+*An open source port of Pure Data to the iPhone.*
 
-      <div id="content">
-		        <p>The need for pdlib came from the development of <a href="/projects/ijam">iJam</a>,
-which needed an audio back end. After looking for existing solutions,
-few synthesizers were free to use in commercial projects,
-and those that available were typically limited in the sounds they could produce.
-I was familiar with <a href="http://rjdj.me">Rjdj</a>
-and their decision to use <a href="http://crca.ucsd.edu/~msp/software.html">Pure Data</a>
-as their audio synthesizer, but they hadn't opted to release their port.</p>
+### [github.com/bryansum/pdlib](http://github.com/bryansum/pdlib)
 
-<p>One of the goals of pdlib was to minimize changes to vanilla Pure Data;
-as such, only the command-line parsing and the audio hardware interface
-have been rewritten. It is based on Pure Data v0.42-5.</p>
+The need for pdlib came from the development of [iJam](/project/ijam.html), which needed an audio back end. After looking for existing solutions, few synthesizers were free to use in commercial projects, and those that available were typically limited in the sounds they could produce. I was familiar with [Rjdj](http://rjdj.me) and their decision to use [Pure Data](http://crca.ucsd.edu/~msp/software.html) as their audio synthesizer, but they hadn't opted to publicly release their port.
 
-<p>The <a href="http://github.com/bryansum/pdlib">project is currently hosted on Github</a> under
+One of the goals of pdlib was to minimize changes to vanilla Pure Data; as such, only the command-line parsing and the audio hardware interface have been rewritten. It is based on Pure Data v0.42-5.
+
+The <a href="http://github.com/bryansum/pdlib">project is currently hosted on Github</a> under
 the FreeBSD license for my contribution. Pure Data itself is under a BSD-style license.
-Be aware, though, that PdListTest uses example code from Martin Peach for the Pure Data OSC
-parts and his work is under GPL.</p>
+Be aware, though, that `PdListTest` uses example code from Martin Peach for the Pure Data OSC
+parts and his work is under GPL.
 
 <p>As it stands, Pure Data wasn't really written to be embedded in other systems,
 and was dependent on <a href="http://www.portaudio.com/">PortAudio</a>, which wasn't
@@ -135,23 +103,3 @@ This is recursive.</li>
 <li>Add test cases</li>
 <li>Verify that <code>openFile:</code> is working correctly</li>
 </ul>
-
-
-      </div>      
-    </div>
-    <div id="footer">
-		2012 Bryan Summersett
-    </div>
-  </div>
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-</body>
-</html>

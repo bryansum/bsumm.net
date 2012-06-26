@@ -60,7 +60,7 @@ footer {
 
 /* -------------- body ---------------------------- */
 
-article {
+#main {
     margin: 0 auto;
 }
 h1 {
@@ -75,7 +75,7 @@ h1 {
 p {
     line-height: 1.6;
     margin-bottom: 25px;
-    text-align: justify;
+/*    text-align: justify;*/
 }
 blockquote p {
     font-size: 0.9em;
@@ -86,11 +86,32 @@ article > p:first-of-type:first-letter {
 article > p:first-of-type:first-line {
     line-height: 1;
 }
+figcaption {
+	font-style: italic;	
+	font-size: 0.9em;
+	margin: 1ex;
+}
 
 @media all and (min-device-width:768px) {
-    article {
+    #main {
         width: 700px;
     }
+}
+
+#main img {
+	box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	margin: 15px;
+}
+#main img:only-of-type {
+	margin: 0;
+}
+
+#main img[style="float: left;"] {
+	margin-left: 0;
+}
+#main img[style="float: right;"] {
+	margin-right: 0;
 }
 /*
 code {
