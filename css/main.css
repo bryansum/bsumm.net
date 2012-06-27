@@ -45,7 +45,7 @@ a:hover {
 
 /* --------------------- header / footer ----------------------- */
 #main, footer {
-    max-width: 700px;
+    max-width: 650px;
 }
 
 header, footer {
@@ -54,6 +54,16 @@ header, footer {
     font-weight: 300;
     text-align: center;
     margin: 2em;
+}
+
+@media all and (max-width: 400px) {
+	header {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	header img {
+		width: 100%;
+	}
 }
 
 footer a, footer a:active, footer a:visited
@@ -79,15 +89,21 @@ footer {
     padding: 0 15px;
 }
 
-/* -------------- posts ---------------------------- */
-ul#posts li {
-	list-style-type: none;
+@media all and (max-width: 480px) {
+	#main, footer {
+		padding: 0 8px;
+	}
 }
-ul#posts .ptime {
-	display: inline-block;
+
+/* -------------- posts ---------------------------- */
+#posts {
+	padding: 0;
+	margin: 1em auto;
+}
+#posts .ptime {
 	width: 6em;
 	text-align: right;
-	margin: 0 1em;
+	padding-right: 1em;
 }
 
 /* -------------- body ---------------------------- */
