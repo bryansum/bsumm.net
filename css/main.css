@@ -44,11 +44,8 @@ a:hover {
 }
 
 /* --------------------- header / footer ----------------------- */
-
-@media all and (min-device-width:768px) {
-    #main, footer {
-        max-width: 700px;
-    }
+#main, footer {
+    max-width: 700px;
 }
 
 header, footer {
@@ -95,6 +92,9 @@ ul#posts .ptime {
 
 /* -------------- body ---------------------------- */
 
+#main {
+	line-height: 1.6em;
+}
 
 h1 {
     font-family: "Helvetica Neue Light", "HelveticaNeue-Light",
