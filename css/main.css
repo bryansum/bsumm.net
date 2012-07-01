@@ -57,12 +57,14 @@ header, footer {
 }
 
 @media all and (max-width: 400px) {
+	header img {
+		width: 100%;
+	}
+}
+@media all and (max-width: 480px) {
 	header {
 		margin-top: 0;
 		margin-bottom: 0;
-	}
-	header img {
-		width: 100%;
 	}
 	h1 {
 		margin: 0.25em auto;
@@ -92,7 +94,7 @@ footer {
     padding: 0 15px;
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 400px) {
 	#main, footer {
 		padding: 0 8px;
 	}
