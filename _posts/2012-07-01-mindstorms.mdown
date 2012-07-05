@@ -5,7 +5,7 @@ layout: post
 **Image of Mindstorms book**
 *Seymour Papert, 1980. MIT Press.*
 
-Seymour Papert must be an amazing man. My only proof of that is via the genius transitive property: Alan Kay cites his book, "Mindstorms," so frequently that I had to eventually get around to reading it. I picked up the revised 1993 edition, which also includes an introduction from John Sculley, among others.* Both found this relatively short book to be highly influential in their understanding of what it means to learn by *people teaching computers* rather than the computers teaching them. Papert's work was later realized as the LOGO project, whose research served as the basis for the founding of the MIT Media Lab.
+My proof of Seymour Papert's brilliance is via the genius transitive property: Alan Kay cites his book, "Mindstorms," so frequently that I had to eventually get around to reading it. I picked up the revised 1993 edition, which also includes an introduction from John Sculley, among others.* Both found this relatively short book influential in their understanding of what it means to learn by *people teaching computers* rather than the computers teaching them. Papert's work was later realized as the LOGO project, whose research served as the basis for the founding of the MIT Media Lab.
 
 * whose endorsement might now be considered questionable circa 2012
 
