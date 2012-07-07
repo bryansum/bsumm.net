@@ -3,4 +3,4 @@ layout: post
 title: txting
 ---
 
-One thing I find interesting about text messaging is the constraint the 160-character limit imposes on what you can say. Our future poets will Tweet.
+There's something haiku-like about the 160-character limit. The poets of our day will tweet.
