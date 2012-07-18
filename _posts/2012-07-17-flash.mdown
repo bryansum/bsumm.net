@@ -1,5 +1,5 @@
 ---
-title: In defense of Flash, the IDE.
+title: In defense of Flash, the IDE
 layout: post
 ---
 
