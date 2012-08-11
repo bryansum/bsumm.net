@@ -49,9 +49,9 @@ Crucially, consistent tools make it easier to switch languages. Devs would then 
 ### Additional languages
 Why do people choose Java? It's not because of Java the language. C++ was heavily marketed by Bell Labs, AT&T (90's). Sun chose to pump millions of dollars into Java. Two things: tools and performance.
 
-Think that they're choosing a language based on type system, etc. Whole class of problems due to the runtime problems, even though this doesn't fix (NullPointerException).
+Think that they're choosing a language based on type system, etc. There's a whole class of problems that aren't handled by this (runtime problems and the `NullPointerException`).
 
-If a language isn't successful, it's because the tools aren't good enough. 100's of people and dicussions: it always comes down to the tools.
+If a language isn't successful, it's because the tools aren't good enough. Through interviews with hundreds of people, online comments, and talks: it always comes down to the tools.
 
 The economy of the game market is actually forcing to  switch the language: they need to use Lua to the logic. Bigger companies don't have the same economics in other fields -- people will tend to write everything in one language. If you're writing something to be run once, you should be using a language made for doing quick scripting tasks, rather than trying to implement these tools in a systems language. 
 
