@@ -9,7 +9,7 @@ body {
     background-image: -moz-linear-gradient   (top, #eee, #fff 300px);
     background-image: linear-gradient        (top, #eee, #fff 300px);
     padding: 1em 0 1em;
-    font-family: Palatino, Georgia, helvetica, sans-serif;
+    font-family: Palatino, Georgia, serif;
     font-size: 1em;
 }
 
