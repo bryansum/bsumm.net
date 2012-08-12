@@ -99,7 +99,7 @@ From our observations, every file generates 100x its file size in metadata. Impl
 This is *sorta* language neutral. Some languages don't have classes; instead they have functions, variables. Each time we go through the data model we find new mappings for new languages. In practice, every single abstraction in this edge has at least 2 languages using it: symbols are used the same in Lisp as in Ruby, for example.
 
 ### Cultural challenges
-Even if you deliver this beautiful thing, there's still a lot of cultural problems in getting something out there successfully. (*audience:* Someone should do this 30 years ago. *Yegge:* Someone did this already in Smalltalk, but it was for this specific dynamic language.)
+Even if you deliver this beautiful thing, there's still a lot of cultural problems in getting something out there successfully. (*audience:* Someone should do this 30 years ago. *Yegge:* Someone did this already in Smalltalk, but it was for that specific dynamic language.)
 
 * *Adoption*: hard to get devs to use new tools. It's hard to retrain myself to click links rather than grep for everything. At Google, it's well-known that fancy new tools have a slow adoption curve. Google ranks you on how adoption is going.
 * *Speed vs accuracy*: Grok's philosophy is that some data is often better than none. On the other hand, Eclipse doesn't scale well for Google-size code bases. Autocomplete sometime happens when a dependency changes. This is a tradeoff, as some programmers don't deal well with eventual consistency-type queries, as sometimes people complain that things completely screw them up if things are building correctly. Java is often used to 100% IDE accuracy, and this is a cultural expectation.
