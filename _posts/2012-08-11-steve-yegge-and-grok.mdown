@@ -81,7 +81,7 @@ The idea is to put peer pressure on the language / compiler vendors community (u
 
 Anecdote: MS to Google people often complained that code exploration will really poor, coming from the world of Intellisense and Visual Studio. 
 
-After doing some research, we realized that people often akin to SQL for doing queries on languages... In other cases, they might want sort of an XPath,  hierarchical form. In other contexts, they might also want to treat code as a graph problem. Desired features would be:
+After doing some research, we realized that people often asked for, essentially, SQL support for doing queries on languages... In other cases, they might want sort of an XPath,  hierarchical form. In other contexts, they might also want to treat code as a graph problem. Desired features would be:
 
 * *Code navigation and browsing*: Jump to decl,def,show xrefs, outlines, ..
 * *Interactive editing*: Indent, reformat, autocomplete symbols...
