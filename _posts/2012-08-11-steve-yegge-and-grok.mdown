@@ -16,13 +16,14 @@ Yegge's ambition is to improve the state of toolchain support for *all* editors,
 This would a great benefit to desktop-based development systems, but more importantly, I think it would be an amazing feature for the plethora of "cloud" editors entering into the space today (see [Cloud9 IDE](http://c9.io), [Space](http://chaoscollective.org/projects/builtinspace.html)), as they would be able to focus on providing a great UX experience while not having to burden themselves with the language support problem. Language tooling was part of the reason TextMate 2, for instance, took so long to build.
 
 ## What we kow
-The project was started work in earnest at Google 4 years ago (2008). This aligns with a [researcher's resume](http://www.cs.indiana.edu/~rpjames/) where he mentions he worked on the project in 2008 in Kirkland (outside Seattle, and home of Costco!). It went through many phases: 
+The project started work in earnest at Google 4 years ago (2008). This aligns with a [researcher's resume](http://www.cs.indiana.edu/~rpjames/) where he mentions he worked on the project in 2008 in Kirkland (outside Seattle, and home of Costco!). It went through many phases: 
 > ...in four years, from "VC funding" to "acceptance" to "cautious enthusiasm" to "OMG all these internal and even external projects now depend critically on us."
 The project is still based at Google Kirkland. It grew from 3 engineers, 6 20%ers (2010) to 6 engineers (time unknown) to 12 engineers (present). At one point, they open sourced the Java-based Python indexer used on the project ([incorporated into Jython](http://bugs.jython.org/issue1541)). It *used* to be publicly available as Google Code Search, but was [removed](http://codesearch.google.com/) in October 2011. (This happens to coincide with his leaked "platform" memo... Coincidence?). A front-end is still publicly available, albeit only for the [Chromium source base](http://code.google.com/p/chromium/source/search).
 
 The most information on the project I could find was a [video of a talk](http://vimeo.com/16069687) he did at the Northwest C++ user's conference in 2010. *Disclaimer:* this talk is nearly two years old at this point, so the project has clearly gone through a number of iterations since this came out. I've gone and written up a loose transcription of the talk, as I haven't seen much else written about it elsewhere. This is all from the slides and his dialogue, but shouldn't be construed as direct quotes in any case. With that being said:
 
 ## Grok
+*Note*: the [original video](http://vimeo.com/16069687) is available on Vimeo.
 
 *Yegge*: Originally pitched at Amazon, now working on this full time at Google.
 Came from learning how to deal with gigantic codebases; 50M lines or more. 
@@ -33,7 +34,7 @@ Came from learning how to deal with gigantic codebases; 50M lines or more.
 * *Only compilers "know" languages*. All non-compiler languages are ad-hoc. If it's not built into the IDE, it's probably not widely (pervasively) used, and you get into the problem where some people are more productive than others due to the tools they choose to use.
 
 ### Language matrix problem
-Given N langauges and M editors / IDEs, total toolchain effort is N * M... Any toolchain support for this number of systems is non-trivial. For example, Emacs: `cc-engine.el` is a huge number of lines of code, and is used entirely for *indentation*.
+Given N langauges and M editors / IDEs, total toolchain effort is N * M... Any toolchain support for this number of systems is non-trivial. For example, Emacs: `cc-engine.el` is a huge number of lines of code, and is almost entirely for *indentation*. This gets replicated for every language out there. 
 
 How do you solve matrix problems like this? Use a hub and spoke model.
 
@@ -77,11 +78,11 @@ The issue is often, when people have a language problem, they tend to want to wr
 The goal of Grok is not to write a parser. We don't want to reinvent the wheel. For in-house languages we instrument the compiler / interpreter.
 
 ### Goal: get compiler writers to give us this information 
-The idea is to put peer pressure on the language / compiler vendors community (ultimately the ones to generate or interpret all the metadata of languages and are the best position to instrument their software properly). People will start to expect "Grok" support in their editors.
+The idea is to put peer pressure on the language / compiler vendors community (ultimately the ones to generate or interpret all the metadata of languages and are the ones in the best position to instrument their software properly). People will start to expect "Grok" support in their editors.
 
-Anecdote: MS to Google people often complained that code exploration will really poor, coming from the world of Intellisense and Visual Studio. 
+*Anecdote:* MS to Google people often complained that code exploration will really poor, coming from the world of Intellisense and Visual Studio. 
 
-After doing some research, we realized that people often asked for, essentially, SQL support for doing queries on languages... In other cases, they might want sort of an XPath,  hierarchical form. In other contexts, they might also want to treat code as a graph problem. Desired features would be:
+After doing some research, we realized that people often asked for, essentially, SQL support for doing queries on languages... In other cases, they might want sort of an XPath,  hierarchical query support. In other contexts, they might also want to treat code as a graph problem. Desired features would be:
 
 * *Code navigation and browsing*: Jump to decl,def,show xrefs, outlines, ..
 * *Interactive editing*: Indent, reformat, autocomplete symbols...
@@ -99,12 +100,12 @@ From our observations, every file generates 100x its file size in metadata. Impl
 This is *sorta* language neutral. Some languages don't have classes; instead they have functions, variables. Each time we go through the data model we find new mappings for new languages. In practice, every single abstraction in this edge has at least 2 languages using it: symbols are used the same in Lisp as in Ruby, for example.
 
 ### Cultural challenges
-Even if you deliver this beautiful thing, there's still a lot of cultural problems in getting something out there successfully. (*audience:* Someone should've done this 30 years ago. *Yegge:* Someone did this already in Smalltalk, but it was for that specific dynamic language.)
+Even if you deliver this beautiful thing, there's still a lot of cultural problems in getting something out there successfully. (*audience:* Someone should've done this 30 years ago. *Yegge:* Someone *did do* this already in Smalltalk, but it was only for that specific dynamic language.)
 
 * *Adoption*: hard to get devs to use new tools. It's hard to retrain myself to click links rather than grep for everything. At Google, it's well-known that fancy new tools have a slow adoption curve. Google ranks you on how adoption is going.
-* *Speed vs accuracy*: Grok's philosophy is that some data is often better than none. On the other hand, Eclipse doesn't scale well for Google-size code bases. Autocomplete sometime halts the entire process when a seemingly simple dependency changes. Doing this remotely is still a tradeoff, as some programmers don't deal well with eventual consistency in their tooling -- some people complain that immediate consistency is crucial to prevent them from building things incorrectly. Java programmers are often used to 100% IDE accuracy, and this is a cultural expectation.
-* *Prioritization*: companies never want to staff this kind of effort.  For example, there was a time when the size of Google's code base bit us. VPs wanted to know how to analyze the code base. Two years ago, static analysis was considered a "no-no," and that we should be using standard tools rather than inventing our own. At some point, they saw that he was working on something that was solved this problem somewhat, even though the wiki said "this is not a static analysis tool". Changed it to "this *is* a static analysis tool". In general, people always want to throw money in things that are immediately gratifying and have immiedate business impact over others.
-* *Managing expectations*: engineers hear about this project and want it yesterday. There's no good elevator pitch for this kind of thing. If you sit down with them for 15, 20 minutes, they will want it. At that point, you have to manage expectations -- if promise everything, you'll never meet people's cools.
+* *Speed vs accuracy*: Grok's philosophy is that some data is often better than none. On the other hand, Eclipse doesn't scale well for Google-size code bases. Autocomplete sometime halts the entire process when a seemingly simple dependency changes. Doing this remotely is still a tradeoff, as some programmers don't deal well with eventual consistency in their tooling -- some people complain that immediate consistency is crucial to prevent them from building things incorrectly. Java programmers are often expecting 100% IDE accuracy, and this is a cultural expectation.
+* *Prioritization*: companies never want to staff this kind of effort.
+* *Managing expectations*: Engineers hear about this project and they want it yesterday. There's no good elevator pitch for this kind of thing, but if you sit down with them for 15 / 20 minutes, they will *want* it at that point. Now, you have to manage expectations. If you promise everything, you'll never be able to meet people's immediate expectation of the thing.
 
 ### Clang @ Google
 * Clang enables modern C++ tools on Linux (finally!). Fast, smart, efficient, usable (all of which CDT is not). There was a lot of work to make it work properly.
@@ -123,10 +124,10 @@ Biggest problem is that we're really tied to Google's build system. Critically t
 
 ### What we've built so far
 
-Team of 3 in Kirkland, plus six 20% contributors. We support C++/Java/Python/JS and 2 internal languages. Open-sourced our Python indexer (jython.org). Mostly support Browser/Navigation + simple queries. Flagship clients are Emacs and Code Search. We started work on interactive use case static analysis. Big analysis is "include what you use": guarantee initiatives that do what you want. 
+Team of 3 in Kirkland, plus six 20% contributors. We support C++/Java/Python/JS and 2 internal languages. Open-sourced our Python indexer (jython.org). Mostly support Browser/Navigation + simple queries. Flagship clients are Emacs and Code Search. We started work on interactive use case static analysis.
 
 ### Open-source / open platform
-Grok isn't easily / directly open-sourceable. Our indexes and protocols are all internal formats (Protocol buffers). We also rely heavily on Google's internal build system. The long-term goal is be an external platform and with open standards:
+Grok isn't easily / directly open-sourceable. Our indexes and protocols are all internal formats. We also rely heavily on Google's internal build system. The long-term goal is be an external platform and with open standards:
 
 * Standardize expected set of compiler artifacts
 * Standardize schemas (MySQL / NoSQL / XML, etc)
