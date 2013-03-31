@@ -11,9 +11,6 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
 a { color: #00e; }
 a:visited { color: #551a8b; }
 a:hover { color: #06e; }
@@ -65,32 +62,6 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
-
-.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
-
-
-
-/* ===== Primary Styles ========================================================
-   Author:
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-/* =============================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
 
 /* =============================================================================
    Non-Semantic Helper Classes
