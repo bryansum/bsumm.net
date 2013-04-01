@@ -1,47 +1,41 @@
 html {
-    background-color: #fff;
-}
-body {
-    color:#423d3d;
-    background-image: -webkit-linear-gradient(top, #eee, #fff 300px);
-    background-image: -ms-linear-gradient    (top, #eee, #fff 300px);
-    background-image: -o-linear-gradient     (top, #eee, #fff 300px);
-    background-image: -moz-linear-gradient   (top, #eee, #fff 300px);
-    background-image: linear-gradient        (top, #eee, #fff 300px);
+    background-color: #fcfcfa;
+    color: #423d3d;
     padding: 1em 0 1em;
-    font-family: "PT Serif", Georgia, serif;
-    font-size: 1em;
+    font-family: "PT Serif", serif;
 }
 
 /* code formatting stolen from github.com */
-code {
-    font-family: "Menlo", 'Bitstream Vera Sans Mono', "Monaco", 'DejaVu Sans Mono', monospace;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    border: 1px solid #eaeaea;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-    margin: 0 2px;
-    padding: 0 5px;
+pre, code, textarea {
+    font-family: "Menlo", monospace;
+    line-height: normal;
 }
 pre {
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    overflow: auto;
-    padding: 6px 10px;
-    border-radius: 3px;
-}
-pre code {
-    border: 0;
-    background-color: none;
+    border-left: 2px solid #ccc;
+    overflow-x: auto;
+    padding-left: 18px;
 }
 
-a, a:active, a:visited {
-    color: #0084b7;
+a {
+    color: steelBlue;
 }
-a:hover {
-    color: #0aadf4;
+a:not(:hover) {
+    text-decoration: none;
 }
+
+h1, h2 {
+    text-rendering: optimizeLegibility;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: square;
+}
+
+p {
+    margin-bottom: 2em;
+}
+
 
 /* --------------------- header / footer ----------------------- */
 #main, footer {
@@ -61,6 +55,7 @@ header, footer {
     width: 100%;
   }
 }
+
 @media all and (max-width: 480px) {
   header {
     margin-top: 0;
@@ -118,7 +113,6 @@ footer {
 }
 
 h1 {
-    font-family: "PT Sans", sans-serif;
     font-size: 2.5em;
     line-height: 1;
 }
@@ -126,19 +120,10 @@ h1 {
     font-style: italic;
 }
 
-p {
-    margin-bottom: 25px;
-}
-
 blockquote p {
     font-size: 0.9em;
 }
-article > p:first-of-type:first-letter {
-    font-size: 2.5em;
-}
-article > p:first-of-type:first-line {
-    line-height: 1;
-}
+
 figcaption {
     font-style: italic; 
     font-size: 0.9em;

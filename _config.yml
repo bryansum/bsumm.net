@@ -1,2 +1,5 @@
 cdn: http://cdn.bsumm.net
+markdown: redcarpet
+pygments: true
+
 

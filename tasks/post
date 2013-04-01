@@ -10,10 +10,11 @@ unless title
   exit(-1)
 end
 
-datetime = (Time.now).strftime('%Y-%m-%d')  # 30 minutes from now.
+datetime = (Time.now).strftime('%Y-%m-%d')
 
-# E.g. 2006-07-16_11-41-batch-open-urls-from-clipboard.markdown
-path = "#{ROOT_DIR}/_posts/#{datetime}-#{title}.markdown"
+# E.g. 2006-07-16_11-41-batch-open-urls-from-clipboard.md
+slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+path = "#{ROOT_DIR}/_posts/#{datetime}-#{slug}.md"
 
 header = <<-END
 ---
@@ -24,4 +25,6 @@ layout: post
 END
 
 File.open(path, 'w') {|f| f << header }
-system(ENV['EDITOR'] || 'vim', path)
+
+puts "Your post can be found at: #{path}"
+

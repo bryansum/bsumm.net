@@ -34,7 +34,7 @@ Came from learning how to deal with gigantic codebases; 50M lines or more.
 * *Only compilers "know" languages*. All non-compiler languages are ad-hoc. If it's not built into the IDE, it's probably not widely (pervasively) used, and you get into the problem where some people are more productive than others due to the tools they choose to use.
 
 ### Language matrix problem
-Given N langauges and M editors / IDEs, total toolchain effort is N * M... Any toolchain support for this number of systems is non-trivial. For example, Emacs: `cc-engine.el` is a huge number of lines of code, and is almost entirely for *indentation*. This gets replicated for every language out there. 
+Given N langauges and M editors / IDEs, total toolchain effort is N * M... Any toolchain support for this number of systems is non-trivial. For example, Emacs: *cc-engine.el* is a huge number of lines of code, and is almost entirely for *indentation*. This gets replicated for every language out there. 
 
 How do you solve matrix problems like this? Use a hub and spoke model.
 
@@ -50,7 +50,7 @@ Crucially, consistent tools make it easier to switch languages. Devs would then 
 ### Additional languages
 Why do people choose Java? It's not because of Java the language. C++ was heavily marketed by Bell Labs, AT&T (90's). Sun chose to pump millions of dollars into Java. Two things: tools and performance.
 
-Think that they're choosing a language based on type system, etc. There's a whole class of problems that aren't handled by this (runtime problems and the `NullPointerException`).
+Think that they're choosing a language based on type system, etc. There's a whole class of problems that aren't handled by this (runtime problems and the *NullPointerException*).
 
 If a language isn't successful, it's because the tools aren't good enough. Through interviews with hundreds of people, online comments, and talks: it always comes down to the tools.
 
@@ -66,7 +66,7 @@ Idea: pry open compilers, run their "guts" on distributed clusters, output  a la
 Clang makes this easy to do. 
 
 ### How we analyze languages
-First use case: create LXR-like environment for Java. `ctags` is *basically* a regexp-based library. Had to fork Eclipse, but all the code was complected with the indexer and the GUI as previously mentioned. Existing tools use a combination of methods for tooling:
+First use case: create LXR-like environment for Java. *ctags* is *basically* a regexp-based library. Had to fork Eclipse, but all the code was complected with the indexer and the GUI as previously mentioned. Existing tools use a combination of methods for tooling:
 
 * *C++: Eclipse CDT (soon to be Clang)* use a reference graph
 * *Java: Eclipse JDT* builds up IR for IDE use cases: diagnostics, errors, warnings, type graphs. Internally, has a reference graph for callers, callee. 
@@ -90,12 +90,12 @@ After doing some research, we realized that people often asked for, essentially,
 * *Static analysis (e.g., find memory leaks)*: Example question: find out how to use exception handling in Java. Want to prove statically-checked exceptions are useless 98% of the time. Now we can do this easily, as we can grep for these things across the entirety of the code base.
 
 ### Language-neutral index
-This is really a key-value store, a multimap. Every identifier gets a key (globally unique).  `C++` names aren't necessarily global in any case. Have to invent a global namespace by depot, etc.
+This is really a key-value store, a multimap. Every identifier gets a key (globally unique).  *C++* names aren't necessarily global in any case. Have to invent a global namespace by depot, etc.
 
 From our observations, every file generates 100x its file size in metadata. Implementation thus far:
 
 * Modeled loosely on Eclipse's IR: Nodes ("bindings") for decls/defs/refs; Typed edges ("associations") between nodes
-* Example association kinds: `SUBCLASS_OF`, `SUBCLASS_OF`, `CALLED_BY`, `IMPLEMENTS`, `ENCLOSING_SCOPE`, `FIELD_OF`, `DEPENDS_ON`, `INCLUDES`
+* Example association kinds: *SUBCLASS_OF*, *SUBCLASS_OF*, *CALLED_BY*, *IMPLEMENTS*, *ENCLOSING_SCOPE*, *FIELD_OF*, *DEPENDS_ON*, *INCLUDES*
 
 This is *sorta* language neutral. Some languages don't have classes; instead they have functions, variables. Each time we go through the data model we find new mappings for new languages. In practice, every single abstraction in this edge has at least 2 languages using it: symbols are used the same in Lisp as in Ruby, for example.
 
