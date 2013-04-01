@@ -169,7 +169,7 @@ Otherwise, if our task executed successfully, store the results for this callbac
         });
 ```			
 
-Execute the function with a null context and the arguments, including our callback, from above. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* functions.
+Execute the function with a null context and the arguments, including our callback, from above. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals.
 
 ```javascript
         f.apply(null, a);
@@ -177,7 +177,7 @@ Execute the function with a null context and the arguments, including our callba
     }
 ```
 
-Finally *notify*. This function executes the callback function given by the client in *await* or *awaitAll*. If there was a problem, report is as the first argument; otherwise call the callback either with a list of results or results as function arguments, depending on whether the API called was *awaitAll* or *await*, respectively.
+Finally *notify*. This function executes the callback function given by the client in *await* or *awaitAll*. If there was a problem, report this as the first argument; otherwise call the callback either with a list of results or results as function arguments, depending on whether the API called was *awaitAll* or *await*, respectively.
 
 ```javascript
     function notify() {
