@@ -22,7 +22,7 @@ queue()
 
 ## *queue.js*
 
-Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). The surrounding parenthesis is optional, but helps clarify intent to the reader that this function will be executed immediately.
+Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). <span class=ref>Note that [this parenthesis isn't necessarily required](http://stackoverflow.com/questions/1634268/explain-javascripts-encapsulated-anonymous-function-syntax); the JS parser just needs to treat this as a *function expression* rather than a *function declaration*, so a *+* or *!* would work as well.</span>The surrounding parenthesis helps clarify to the reader that this function will be executed immediately.
 
 ```javascript
 (function() {
@@ -145,7 +145,7 @@ Now we create an internal function callback for the task we're about to execute.
           --active;
 ```
 
-Now we're inside of this internal callback function. If we have errors, clear all of our state values and thus exit our *while* loop early. This also has the other side effects mentioned. We also should immediately notify the caller that we can an issue.
+Now we're inside of this internal callback function. If we have errors, clear all of our state values and thus exit our *while* loop early. This also has the other side effects mentioned. In this case, we should immediately notify our client of this error.
 
 ```javascript
           if (error != null) return;
