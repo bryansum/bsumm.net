@@ -5,19 +5,30 @@ layout: post
 
 Even with the proliferation of open source software on the web, relatively few developers take the time to study the source code of the software they might use everyday. I believe this can largely be traced back to a lack of culture around code reading, which I will hopefully talk about in a later post. To combat this for now, however, the answer is simple: we just need to practice looking at and studying the works of others, similar to the way painters [studied (and copied) the great masters](http://www.paulgraham.com/hp.html). 
 
-Beginning today, I'm beginning a series of "deep dives." First is a look into a tiny JavaScript asynchronous helper library called *queue*, written by Mike Bostock (of [d3.js fame](http://d3js.org/)). One of the most identifiable trends in JS today is the desire to prevent "callback spaghetti:" highly nested callbacks that need to execute in some order. Many solutions have been implemented, from [promises](http://promises-aplus.github.com/promises-spec/) to [generators](https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Iterators_and_Generators) to a [combination of both](http://taskjs.org/). Mike takes a simple approach: the API comprises one method, *defer*, which takes in a task (a simple function), along with optional arguments. To read them back, *await* and *awaitAll*. These differ only in how they return their results array. Mike mentions the entire source can be compressed down to around 500 bytes, so this journey shouldn't take too long.
+Beginning today, I'm beginning a series of "deep dives." First is a look into a tiny JavaScript asynchronous helper library called *queue*, written by Mike Bostock (of [d3.js fame](http://d3js.org/)). Many libraries have been written prevent "callback spaghetti:" highly nested callbacks that need to be executed in some order. Many solutions have been implemented, from [promises](http://promises-aplus.github.com/promises-spec/) to [generators](https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Iterators_and_Generators) to a [combination of both](http://taskjs.org/). Mike takes a simple approach: the API comprises one method, *defer*, which takes in a task (a Node.JS-style function, whose last argument must be a completion callback), along with optional arguments. To get the results back, there's *await* and *awaitAll*. These differ only in how they return their results array. Mike mentions the entire source can be compressed down to around 500 bytes, so this walkthrough shouldn't take too long.
 
-I'd recommend looking the [source from GitHub](https://github.com/mbostock/queue) and [taking a quick peek at *queue.js*](https://raw.github.com/mbostock/queue/master/queue.js) in its entirety before reading this to get a quick sense of the overall code layout.
+## Example
+
+First, though, I'd recommend looking at the [repo on GitHub](https://github.com/mbostock/queue), or [taking a quick peek at *queue.js*](https://raw.github.com/mbostock/queue/master/queue.js) directly before reading this to get a quick sense of the overall code structure. Here's an example use of the API from the docs, reading two files in parallel and awaiting the combined results:
+
+```javascript
+queue()
+    .defer(fs.stat, __dirname + "/../Makefile")
+    .defer(fs.stat, __dirname + "/../package.json")
+    .await(function(error, file1, file2) {
+		console.log(file1, file2);
+	});
+```
 
 ## *queue.js*
 
-Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). This is designated by the convention of using a right-paren before the function definition. This parenthesis is optional, but helps clarify intent to the reader that this function will be executed immediately at the end of this definition.
+Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). The surrounding parenthesis is optional, but helps clarify intent to the reader that this function will be executed immediately.
 
 ```javascript
 (function() {
 ```
 
-Next, we check for require.js/Node.js-type export commands; if these exist, add our queue function to our module exports. Otherwise add it to *self*. Assigning to *self* was new to me, as I typically expect modules to assign to the *window* global for browsers; however, it turns out modern browsers resolve *self* to *window* in the browser, and to the Web Worker context [in a Web Worker](http://blog.vjeux.com/2011/javascript/javascript-one-line-global-export.html). Thus, assigning to *self* covers both usage contexts in one go. Note it may also seem that *queue* is seemingly undefined at this point; however, because JavaScript hoists variable names to the top of functions, the function *queue* from below will be immediately available.
+Next, we check for Node.js-style modules; if these exist, add *queue* as a module. Otherwise add it to the *self* object. <span class=ref>Assigning to *self* was new to me, as I typically expect modules to assign to the *window* global for browsers; however, it turns out most browsers resolve *self* to *window* in the global context, and to the Web Worker context [in a Web Worker](http://blog.vjeux.com/2011/javascript/javascript-one-line-global-export.html). Thus, assigning to *self* covers both contexts.</span> Note it may also seem that *queue* is undefined at this point; however, because JavaScript [hoists variable names](http://stackoverflow.com/questions/7506844/javascript-function-scoping-and-hoisting) to the top of functions, the function *queue* from below is actually available.
 
 ```javascript
   if (typeof module === "undefined") self.queue = queue;
@@ -26,7 +37,7 @@ Next, we check for require.js/Node.js-type export commands; if these exist, add 
   queue.version = "1.0.2";
 ```
 
-This is a shorthand for *Array.prototype.slice*.
+This is a shorthand for *Array.prototype.slice*, and now we enter into our main function definition.
 
 ```javascript
   var slice = [].slice;
@@ -34,7 +45,7 @@ This is a shorthand for *Array.prototype.slice*.
   function queue(parallelism) {
 ```
 
-*queue* holds our to-be-returned object to the client. This initially seems confusing, as it shadows the name of the function we're exporting as a library, but this makes more sense in this context from a naming perspective than naming it something else. Most other variables are already explained:
+*queue* is the object we return to the client at the end of this constructor. This initially seems confusing, as it shadows the name of the function immediately above, but this allows code below to read more naturally. Most other variables are already explained:
 
 ```javascript
     var queue = {},
@@ -52,13 +63,13 @@ However, *await* and *awaitAll* are interesting. In the context of the internals
         awaitAll;
 ```
 
-Setting a default parallelism is important later, as this will always make our *while* check for throttling active calls work.
+Setting default parallelism is important for later on, as this variable is checked when popping tasks off our queue to ensure we're not executing more than *parallelism* tasks at a time.
 
 ```javascript
     if (!parallelism) parallelism = Infinity;
 ```
 
-Next, *defer* takes in the arguments for the call, which is an array-like object. *queue*'s API specifies the first argument is the task function, and the rest are optional arguments. Note that we also refuse to execute *defer* if we've seen an error with any previous tasks.
+Next we have *defer*, our first public function. *defer* slurps in its arguments and stores them in a node variable. *defer*'s API specifies its first argument is our task function, and the rest are optional arguments for that function.
 
 ```javascript
     queue.defer = function() {
@@ -66,7 +77,7 @@ Next, *defer* takes in the arguments for the call, which is an array-like object
         var node = arguments;
 ```
 
-While deferring a task, *queue* first adds a new *undefined* result in the results array. This reserves space for the result, firstly, and also since *Array.push* returns the *.length* of the array, in this case, *node.i* now gets set to the index of where the result should be in the *results* array. Then there's some logic for adding to the linked list of queue tasks, and incrementing the remaining tasks count for later. Finally, we execute our *pop()* method, where most of the the magic happens, but we'll look at this in a second. Note that our *defer* method executes our tasks immediately. So ends our *defer* method.
+When deferring a task, *queue* adds a new undefined result to the results array. This inserts a placeholder object in the space for the result, and since *Array.push* returns the length of the array, *node.i* gets set to the index of that result in the results array. Next, there's some logic for adding to the linked list of queue tasks, and incrementing the remaining tasks count for later. Finally, we execute our *pop()* method, where most of the the magic happens. We'll look at this in a second. <span class=ref>Interesting detail: *defer* tries to executes our tasks immediately, rather than waiting for *await*, for instance. This means that we can call *defer* after we *await* and it should call *await* again for us.</span> So ends our *defer* method.
 
 ```javascript
         node.i = results.push(undefined) - 1;
@@ -79,7 +90,7 @@ While deferring a task, *queue* first adds a new *undefined* result in the resul
     };
 ```
 
-The *await* method and *awaitAll* methods are similar; they simply set the variables we were talking about, and optionally, if there weren't any remaining tasks at this point, immediately notify our callback of our status. These methods also return their parent object, *queue*, which enables a nice [builder pattern-like](http://en.wikipedia.org/wiki/Builder_pattern) API. See the [examples in the documentation](https://github.com/mbostock/queue).
+The *await* method and *awaitAll* methods are similar; they simply set the variables we were talking about, and optionally, if there weren't any remaining tasks at this point, immediately notify our callback of our status. These methods also return their parent object, *queue*, which enables a nice [builder pattern-like](http://en.wikipedia.org/wiki/Builder_pattern) API. See the [examples in the documentation](https://github.com/mbostock/queue) for how this is used.
 
 ```javascript
     queue.await = function(f) {
@@ -97,7 +108,7 @@ The *await* method and *awaitAll* methods are similar; they simply set the varia
     };
 ```
 
-*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. The *popping* variable here is used to signal to the task's internal callback function, which we'll see below, whether or not we're still popping tasks off our queue via our *while* loop. This comes into play in the case that a task completes immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again, since in that case we're already still executing this function.
+*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. <span class=ref>The *popping* variable here is used to signal to the task's internal callback function, which we'll see below, whether or not we're still popping tasks off our queue via our *while* loop. This comes into play in the case when a task completes immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again.</span>
 
 ```javascript
     function pop() {
@@ -147,7 +158,7 @@ Now we're inside of this internal callback function. If we have errors, clear al
             notify();
 ```
 
-Otherwise, if our task executed successfully, store the results for this callback in the results array. Check if there are any remaining tasks; if there are and we're still in our *popping* phase (this can occur when our deferred function returns immediately from the function *apply*-cation below), do nothing, because the while loop will continue to add tasks on its next iteration. However, if we're not still *popping* tasks (this will happen if the task doesn't return immediately, i.e., most tasks), fire the loop again. Finally, if there's no remaining tasks, notify the caller that we're done.
+Otherwise, if our task executed successfully, store the results for this callback in the results array. Check if there are any remaining tasks; if there are and we're still popping tasks in our *while* loop, do nothing, because the loop is dequeueing tasks already. Otherwise, start popping again. <span class=ref>Immediately returning / synchronous tasks don't normally occur for tasks that involve I/O or ones that call *setTimeout*, because these will typically trigger their callback on the next event loop tick.</span> Finally, if there's no remaining tasks, notify the client that we're done.
 
 ```javascript
           } else {
@@ -188,6 +199,6 @@ Finally *notify*. This function executes the callback function given by the clie
 ```
 
 ## Conclusion
-That wasn't so bad, huh? It's nice to see a library with such high utility and so little code. Hopefully there was at least something to learn from in the source. If you're interested in reading more async libraries for JavaScript, check out the source to [kriskowal's *q*](https://github.com/kriskowal/q), [Tom and Yehuda's *rsvp.js*](https://github.com/tildeio/rsvp.js), or even [Mozilla's experimental *task.js*](https://github.com/mozilla/task.js) as well. 
+That wasn't so bad, huh? It's nice to see a library with that much utility in that little code. Hopefully there was at least something you learned from reading the source. If you're interested in reading more async libraries for JavaScript, check out the source to [kriskowal's *q*](https://github.com/kriskowal/q), [Tom and Yehuda's *rsvp.js*](https://github.com/tildeio/rsvp.js), or even [Mozilla's experimental *task.js*](https://github.com/mozilla/task.js) as well. 
 
 Please [feel free to comment](mailto:bsummersett@gmail.com) on feedback, style, etc., as I'm looking to create these posts on a somewhat regular cadence.
