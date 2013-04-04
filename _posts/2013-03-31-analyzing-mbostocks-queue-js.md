@@ -121,7 +121,7 @@ Now, within the loop, our index is the next started task. We find its arguments,
             a = slice.call(t, 1);
 ```
 
-Here, the *callback* construct a one-off callback for a given task index, and pushes this as the new last argument; it's a Node.JS convention to have the last argument as the callback. We then increase our active count and execute our task function with a null context and its arguments. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals. So ends our while loop.
+Here, *callback* returns the callback for a given task index, and pushes this as the new last argument; it's a Node.JS convention to have the last argument as the callback. We then increase our active count and execute our task function with a null context and its arguments. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals. So ends our while loop.
 
 ```javascript
         a.push(callback(i));
@@ -131,7 +131,7 @@ Here, the *callback* construct a one-off callback for a given task index, and pu
     }
 ```
 
-Next is the *callback* function. This returns a callback for a given task. Why couldn't we just have our callback function defined in the while loop? This wouldn't work, [since JavaScript has *function scope*](http://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simple-practical-example), so our task index *i* would contain the last written index value, not what was in *i* when the callback function was created. The callback takes in an optional error, and then a result value, which is a Node.JS convention.
+Next is the *callback* constructor implementation. Why do we need this function? Putting the callback directly in the while loop wouldn't work, [since JavaScript has *function scope*](http://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simple-practical-example), so our task index *i* would contain the last written index value. Now we see that this constructor serves to close over the task index for the callback function. The returned callback takes in an optional error, and then a result value, which is a Node.JS convention.
 
 ```javascript
     function callback(i) {
