@@ -121,7 +121,7 @@ Now, within the loop, our index is the next started task. We find its arguments,
             a = slice.call(t, 1);
 ```
 
-Due to *queue*'s design, we assume that the last argument to these called functions should always be a callback. The *callback* function creates a callback for a given task index, and pushes this as the last argument; this position is a Node.JS convention. We then increase our active count and execute our task function with a null context and its arguments. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals. So ends our while loop.
+Here, the *callback* construct a one-off callback for a given task index, and pushes this as the new last argument; it's a Node.JS convention to have the last argument as the callback. We then increase our active count and execute our task function with a null context and its arguments. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals. So ends our while loop.
 
 ```javascript
         a.push(callback(i));
