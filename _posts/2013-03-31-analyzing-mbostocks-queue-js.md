@@ -16,8 +16,8 @@ queue()
     .defer(fs.stat, __dirname + "/../Makefile")
     .defer(fs.stat, __dirname + "/../package.json")
     .await(function(error, file1, file2) {
-		console.log(file1, file2);
-	});
+    console.log(file1, file2);
+  });
 ```
 
 ## *queue.js*
@@ -33,8 +33,8 @@ Next, we check for Node.js-style modules; if these exist, add *queue* as a modul
 ```javascript
   if (typeof module === "undefined") self.queue = queue;
   else module.exports = queue;
+  queue.version = "1.0.3";
 
-  queue.version = "1.0.2";
 ```
 
 This is a shorthand for *Array.prototype.slice*, and now we enter into our main function definition.
@@ -49,18 +49,19 @@ This is a shorthand for *Array.prototype.slice*, and now we enter into our main 
 
 ```javascript
     var queue = {},
-        active = 0, // number of in-flight deferrals
-        remaining = 0, // number of deferrals remaining
-        head, tail, // singly-linked list of deferrals
+        tasks = [],
+        started = 0, // number of tasks that have been started (and perhaps finished)
+        active = 0, // number of tasks currently being executed (started but not finished)
+        remaining = 0, // number of tasks not yet finished
+        popping, // inside a synchronous task callback?
         error = null,
-        results = [],
 ```
 
-However, *await* and *awaitAll* are interesting. In the context of the internals of *queue*, the *await* variable is a placeholder for the final callback function. *awaitAll* here is a boolean that determines how the results should be handed back: either as separate arguments, or as an array. [Read the documentation](https://github.com/mbostock/queue) for more information.
+However, *await* and *all* are interesting. In the context of the internals of *queue*, the *await* variable is a placeholder for the final callback function. *all* here is a boolean that determines how the results should be handed back: either as separate arguments, or as an array. [Read the documentation](https://github.com/mbostock/queue) for more information.
 
 ```javascript
         await = noop,
-        awaitAll;
+        all;
 ```
 
 Setting default parallelism is important for later on, as this variable is checked when popping tasks off our queue to ensure we're not executing more than *parallelism* tasks at a time.
@@ -69,20 +70,17 @@ Setting default parallelism is important for later on, as this variable is check
     if (!parallelism) parallelism = Infinity;
 ```
 
-Next we have *defer*, our first public function. *defer* slurps in its arguments and stores them in a node variable. *defer*'s API specifies its first argument is our task function, and the rest are optional arguments for that function.
+Next we have *defer*, our first public function. *defer* slurps in its arguments and stores them to our current tasks. *defer*'s API specifies its first argument is our task function, and the rest are optional arguments for that function.
 
 ```javascript
     queue.defer = function() {
       if (!error) {
-        var node = arguments;
+        tasks.push(arguments);
 ```
 
-When deferring a task, *queue* adds a new undefined result to the results array. This inserts a placeholder object in the space for the result, and since *Array.push* returns the length of the array, *node.i* gets set to the index of that result in the results array. Next, there's some logic for adding to the linked list of queue tasks, and incrementing the remaining tasks count for later. Finally, we execute our *pop()* method, where most of the the magic happens. We'll look at this in a second. <span class=ref>Interesting detail: *defer* tries to executes our tasks immediately, rather than waiting for *await*, for instance. This means that we can call *defer* after we *await* and it should call *await* again for us.</span> So ends our *defer* method.
+Next, we increment our count of remaining tasks, and then execute our *pop()* method, where most of the the magic happens. We'll look at this in a second. <span class=ref>Interesting detail: *defer* tries to executes our tasks immediately, rather than waiting for *await*, for instance. This means that we can call *defer* after we *await* and it should call *await* again for us.</span> So ends our *defer* method.
 
 ```javascript
-        node.i = results.push(undefined) - 1;
-        if (tail) tail._ = node, tail = tail._;
-        else head = tail = node;
         ++remaining;
         pop();
       }
@@ -95,100 +93,86 @@ The *await* method and *awaitAll* methods are similar; they simply set the varia
 ```javascript
     queue.await = function(f) {
       await = f;
-      awaitAll = false;
+      all = false;
       if (!remaining) notify();
       return queue;
     };
 
     queue.awaitAll = function(f) {
       await = f;
-      awaitAll = true;
+      all = true;
       if (!remaining) notify();
       return queue;
     };
 ```
 
-*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. <span class=ref>The *popping* variable here is used to signal to the task's internal callback function, which we'll see below, whether or not we're still popping tasks off our queue via our *while* loop. This comes into play in the case when a task completes immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again.</span>
+*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. <span class=ref>The *popping* variable here is used to signal to the task's internal callback function whether or not we're still actively popping tasks off our queue. This comes into play in the case when a task completes synchronously / immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again.</span> Now we get to the main *while* loop for executing our tasks. We continue to spawn new tasks (via *started*) until we run out of them, or we reach the max parallelism of tasks at the given time.
 
 ```javascript
     function pop() {
-      var popping;
+      while (popping = started < tasks.length && active < parallelism) {
 ```
 
-Now we get to the main *while* loop for executing our tasks. We continue to spawn new tasks until we run out of them, or we reach the max parallelism  of tasks for a given unit of time.
+Now, within the loop, our index is the next started task. We find its arguments, *t*, then extract its arguments from the input using *slice(..., 1)*, which essentially removes the task function call from the arguments list. 
 
 ```javascript
-      while (popping = head && active < parallelism) {
+        var i = started++,
+            t = tasks[i],
+            a = slice.call(t, 1);
 ```
 
-Now, within the loop, and for a given node, we assign our head node to it, extract the function to be executed, and then extract its arguments from the input using *slice(..., 1)*, which essentially removes the task function call from the arguments list. Then, keep track of our index value for the results array. Remember that from before?
+Due to *queue*'s design, we assume that the last argument to these called functions should always be a callback. The *callback* function creates a callback for a given task index, and pushes this as the last argument; this position is a Node.JS convention. We then increase our active count and execute our task function with a null context and its arguments. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals. So ends our while loop.
 
 ```javascript
-        var node = head,
-            f = node[0],
-            a = slice.call(node, 1),
-            i = node.i;
-```
-
-If this is the last element, make sure we clear the list. Otherwise, pop the next oldest item as the new head. Increment our active tasks count.
-
-```javascript
-        if (head === tail) head = tail = null;
-        else head = head._;
+        a.push(callback(i));
         ++active;
-```
-
-Now we create an internal function callback for the task we're about to execute. Due to *queue*'s design, we assume that the last argument to these called functions should always be a callback that takes in first, an optional error, and then a result value, which is a Node.JS convention.
-
-```javascript
-        a.push(function(e, r) {
-          --active;
-```
-
-Now we're inside of this internal callback function. If we have errors, clear all of our state values and thus exit our *while* loop early. This also has the other side effects mentioned. In this case, we should immediately notify our client of this error.
-
-```javascript
-          if (error != null) return;
-          if (e != null) {
-            // clearing remaining cancels subsequent callbacks
-            // clearing head stops queued tasks from being executed
-            // setting error ignores subsequent calls to defer
-            error = e;
-            remaining = results = head = tail = null;
-            notify();
-```
-
-Otherwise, if our task executed successfully, store the results for this callback in the results array. Check if there are any remaining tasks; if there are and we're still popping tasks in our *while* loop, do nothing, because the loop is dequeueing tasks already. Otherwise, start popping again. <span class=ref>Immediately returning / synchronous tasks don't normally occur for tasks that involve I/O or ones that call *setTimeout*, because these will typically trigger their callback on the next event loop tick.</span> Finally, if there's no remaining tasks, notify the client that we're done.
-
-```javascript
-          } else {
-            results[i] = r;
-            if (--remaining) popping || pop();
-            else notify();
-          }
-        });
-```			
-
-Execute the function with a null context and the arguments, including our callback, from above. Note that *this* as context would be inappropriate here, as the called tasks shouldn't have any knowledge of the *queue* internals.
-
-```javascript
-        f.apply(null, a);
+        t[0].apply(null, a);
       }
     }
 ```
+
+Next is the *callback* function. This returns a callback for a given task. Why couldn't we just have our callback function defined in the while loop? This wouldn't work, [since JavaScript has *function scope*](http://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simple-practical-example), so our task index *i* would contain the last written index value, not what was in *i* when the callback function was created. The callback takes in an optional error, and then a result value, which is a Node.JS convention.
+
+```javascript
+    function callback(i) {
+      return function(e, r) {
+```
+
+Now we're inside the internal callback function. Decrementing the active count means we can potentially start another task. If we have errors, set our error variable, which will implicitly dequeue all other tasks; we also notify our client immediately that an error has occurred. 
+
+```javascript
+        --active;
+        if (error != null) return;
+        if (e != null) {
+          error = e; // ignore new tasks and squelch active callbacks
+          started = remaining = NaN; // stop queued tasks from starting
+          notify();
+```
+
+Otherwise, if our task executed successfully, store the result for this callback in the original task array. Check if there are any remaining tasks; if there are and we're still popping tasks in our *while* loop, do nothing, because the loop is dequeueing tasks already. Otherwise, start popping again. <span class=ref>Immediately returning / synchronous tasks don't normally occur for tasks that involve I/O or ones that call *setTimeout*, because these will typically trigger their callback on the next event loop tick.</span> Finally, if there's no remaining tasks, notify the client that we're done.
+
+```javascript
+        } else {
+          tasks[i] = r;
+          if (--remaining) popping || pop();
+          else notify();
+        }
+      };
+    }
+```     
 
 Finally *notify*. This function executes the callback function given by the client in *await* or *awaitAll*. If there was a problem, report this as the first argument; otherwise call the callback either with a list of results or results as function arguments, depending on whether the API called was *awaitAll* or *await*, respectively.
 
 ```javascript
     function notify() {
       if (error != null) await(error);
-      else if (awaitAll) await(null, results);
-      else await.apply(null, [null].concat(results));
+      else if (all) await(error, tasks);
+      else await.apply(null, [error].concat(tasks));
     }
 
     return queue;
   }
-```	  
+```   
 
 *noop* is used as a default value for the *await* callback. This is an example of the [null object pattern](http://en.wikipedia.org/wiki/Null_Object_pattern) and simplifies the implementation in *notify*, so we don't have to special case our logic if the *await* callback was null.
 
