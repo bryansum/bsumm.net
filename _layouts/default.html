@@ -33,12 +33,48 @@
 
   </script>
   <!-- Google Analytics end -->
+  <script type="text/javascript">
+var text = "Bryan Summersett";
+var chars = text
+    .replace(/ /g, '')
+    .split('');
+
+var by3 = function(acc, e, i) {
+        var ai = Math.floor(i/3);
+        if (!acc[ai]) acc[ai] = "";
+        acc[ai] += e;
+        return acc;
+    };
+var zip = function(arrs) {
+    return arrs[0].map(function(_,i){
+        return arrs.map(function(arr){return arr[i]})
+    });
+}
+
+var colors = chars
+    .map(function(e,i) { return e.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0); })
+    .map(function(e,i) { return Math.floor(e * (255/25));  })
+    .map(function(e,i) { return ("0" + e.toString(16)).substr(-2); })
+    .reduce(by3, []);
+
+var splitChars = chars.reduce(by3, []);
+
+document.addEventListener("DOMContentLoaded", function() {
+    var logo = document.getElementById('logo');
+    var blocks = zip([colors, splitChars])
+        .forEach(function(e,i) {
+            var color = e[0], chars = e[1];
+            var div = document.createElement('div');
+            div.style.background = "#" + color;
+            div.innerText = chars;
+            logo.appendChild(div);
+        });
+});
+  </script>
 </head>
 <body>
     <header>
-        <a href="/">
-          <img src="{{ '/images/title.png' | cdn }}">
-        </a>
+        <div id="logo">
     </header>
 
     <div role="main" id="main">

@@ -5,6 +5,27 @@ html {
     font-family: "PT Serif", serif;
 }
 
+/* -------------- logo ---------------------------- */
+#logo {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin: auto;
+  height: 128px;
+  width: 340px;
+}
+#logo > div {
+  width: 62px;
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  font-size: 26px;
+  color: white;
+  padding-top: 50px;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.1em;
+}
+
 /* code formatting stolen from github.com */
 pre, code, textarea {
     font-family: "Menlo", monospace;
