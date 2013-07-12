@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var color = e[0], chars = e[1];
             var div = document.createElement('div');
             div.style.background = "#" + color;
-            div.innerText = chars;
+            div.textContent = chars;
             logo.appendChild(div);
         });
 });

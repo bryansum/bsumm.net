@@ -7,19 +7,23 @@ html {
 
 /* -------------- logo ---------------------------- */
 #logo {
+  display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   margin: auto;
   height: 128px;
   width: 340px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 #logo > div {
   width: 62px;
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
-  font-size: 26px;
+  font-size: 25px;
   color: white;
   padding-top: 50px;
   text-rendering: optimizeLegibility;
