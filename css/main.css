@@ -6,15 +6,6 @@ html {
 }
 
 /* -------------- logo ---------------------------- */
-@media all and (max-width: 400px) {
-  #logo {  
-    width: 305px;
-  }
-  #logo > div {
-    font-size: 23px;
-    width: 55px;
-  }
-}
 
 #logo {
   display: -webkit-box;
@@ -36,6 +27,15 @@ html {
   color: white;
   padding-top: 50px;
   text-rendering: optimizeLegibility;
+}
+@media all and (max-width: 400px) {
+  #logo {  
+    width: 305px;
+  }
+  #logo > div {
+    font-size: 23px;
+    width: 55px;
+  }
 }
 
 /* code formatting stolen from github.com */
