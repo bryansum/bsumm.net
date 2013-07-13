@@ -6,9 +6,18 @@ html {
 }
 
 /* -------------- logo ---------------------------- */
+@media all and (max-width: 400px) {
+  #logo {  
+    width: 305px;
+  }
+  #logo > div {
+    font-size: 23px;
+    width: 55px;
+  }
+}
+
 #logo {
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -21,13 +30,12 @@ html {
 }
 #logo > div {
   width: 62px;
-  font-family: "Helvetica Neue", Helvetica;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue";
   font-weight: 100;
   font-size: 25px;
   color: white;
   padding-top: 50px;
   text-rendering: optimizeLegibility;
-  letter-spacing: 0.1em;
 }
 
 /* code formatting stolen from github.com */
