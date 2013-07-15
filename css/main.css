@@ -8,6 +8,7 @@ html {
 /* -------------- logo ---------------------------- */
 
 #logo {
+  text-decoration: none;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -19,7 +20,8 @@ html {
   -webkit-user-select: none;
   -moz-user-select: none;
 }
-#logo > div {
+
+#logo div {
   width: 62px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue";
   font-weight: 100;
@@ -29,10 +31,10 @@ html {
   text-rendering: optimizeLegibility;
 }
 @media all and (max-width: 400px) {
-  #logo {  
+  #logo {
     width: 305px;
   }
-  #logo > div {
+  #logo div {
     font-size: 23px;
     width: 55px;
   }
@@ -110,12 +112,6 @@ ul {
 
 header, footer {
     text-align: center;
-}
-
-@media all and (max-width: 400px) {
-  header img {
-    width: 100%;
-  }
 }
 
 @media all and (max-width: 480px) {
