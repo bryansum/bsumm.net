@@ -13,8 +13,6 @@ In other media, though, ambiguity in merges isn't a big deal, especially when de
 
 Tracking document changes in Word is another example of VCS that happens to be quite usable for its problem domain. Seeing the main DVCS princple (changes, not versions!) applied to a WYSIWYG editor, visual or textual, would be interesting. This is basically where Google Wave was heading.
 
-For certain domains, I would like to see an abstracted editor, using Git internally, that makes it totally transparent to the user when commits are occuring. This would be basically equivalent to an undo / redo command history, but with the additional ability for you to bring in others' history in with yours. 
+For certain domains, I would like to see an abstracted editor, using Git internally, that makes it totally opaque to the user when commits are occuring. This would be basically equivalent to an undo / redo command history, but with the additional ability for you to bring in others' history in with yours. 
 
-Again, this all entails a medium receptive to ambiguous changes, so systems language programming would probably be a bad fit for this. I would expect this would be most useful in the context of GUI programming and front-end development, where merges are as simple as dragging and dropping. Our limited ability to form visual abstractions, and its inherit decoupled nature, (c.f. the verbosity of CSS / HTML declarations, at least compared to a textual programming language) makes it that much better when having to deal with merges of changes.
-
-I think.
+Again, this all entails a medium receptive to ambiguous changes, so systems language programming would probably be a bad fit for this. I would expect this would be most useful in the context of GUI programming and front-end development, where merges can be as simple as dragging and dropping. The traditional difficulty of forming abstractions with a visual medium (at least compared to textual programming languages) fortunately makes it that much easier to adapt to a new model of merging changes.
