@@ -154,6 +154,7 @@ footer {
   width: 6em;
   text-align: right;
   padding-right: 1em;
+  vertical-align: top;
 }
 
 /* -------------- body ---------------------------- */
