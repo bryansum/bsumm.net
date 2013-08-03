@@ -68,12 +68,18 @@ ul {
 }
 
 .ref {
-	position: absolute;
-	width: 250px;
-	left: 700px;
-	color: #ACA8A5;
-	font-size: 0.75em;
-	line-height: 1.5em;
+  position: absolute;
+  width: 250px;
+  left: 700px;
+  color: #ACA8A5;
+  font-size: 0.75em;
+  line-height: 1.5em;
+}
+@media all and (max-width: 480px) {
+  /* hide comments for mobile devices for now */
+  .ref {
+    display: none;
+  }
 }
 
 #main {
@@ -115,6 +121,10 @@ header, footer {
 }
 
 @media all and (max-width: 480px) {
+  /* default font size on mobile seemed too big */
+  html {
+    font-size: 14px;
+  }
   header {
     margin-top: 0;
     margin-bottom: 0;
