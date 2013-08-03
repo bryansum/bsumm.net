@@ -46,7 +46,7 @@ IBM's design decision was very different: Apple had the vertical integration. In
 
 I've spoken with Rod Canion, who founded Compaq. I asked him, "what made you think about creating a PC clone?" Rod had been at TI, and said he learned one thing: whenever IBM did something, it became a standard, so it was a no-brainer. 
 
-Sculley introduced the concept of the CD-ROM to computers, and thought that was the future of computing. <span class=ref>[HyperCard too](http://kensegall.com/2012/07/maybe-sculley-wasnt-so-after-all/#comment-597662718), it seems.</span>. He brought Negroponte, the CEO of Bell Labs, and a bunch of other people together based on the idea of the CD-ROM, which they all believed could create a new age of communication. Even though IBM left them less controlled, Apple had structure, but kept them in a niche market, Apple didn't get the growth because of the path they took, even though they were structured. 
+Sculley introduced the concept of the CD-ROM to computers, and thought that was the future of computing. <span class=ref>[HyperCard too](http://kensegall.com/2012/07/maybe-sculley-wasnt-so-after-all/#comment-597662718), it seems.</span> He brought Negroponte, the CEO of Bell Labs, and a bunch of other people together based on the idea of the CD-ROM, which they all believed could create a new age of communication. Even though IBM left them less controlled, Apple had structure, but kept them in a niche market, Apple didn't get the growth because of the path they took, even though they were structured. 
 
 **H:** They weren't able to pivot to a structured mode that was successful, because they needed to maintain control over the pieces, so they couldn't optimize to the licensing model.
 

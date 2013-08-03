@@ -148,10 +148,9 @@ footer {
 #posts {
   padding: 0;
   margin: 1em auto;
-  width: 400px;
 }
 #posts .ptime {
-  width: 6em;
+  width: 33%;
   text-align: right;
   padding-right: 1em;
   vertical-align: top;
