@@ -15,7 +15,7 @@ Yegge's ambition is to improve the state of toolchain support for *all* editors,
 
 This would a great benefit to desktop-based development systems, but more importantly, I think it would be an amazing feature for the plethora of "cloud" editors entering into the space today (see [Cloud9 IDE](http://c9.io), [Space](http://chaoscollective.org/projects/builtinspace.html)), as they would be able to focus on providing a great UX experience while not having to burden themselves with the language support problem. Language tooling was part of the reason TextMate 2, for instance, took so long to build.
 
-## What we kow
+## What we know
 The project started work in earnest at Google 4 years ago (2008). This aligns with a [researcher's resume](http://www.cs.indiana.edu/~rpjames/) where he mentions he worked on the project in 2008 in Kirkland (outside Seattle, and home of Costco!). It went through many phases: 
 > ...in four years, from "VC funding" to "acceptance" to "cautious enthusiasm" to "OMG all these internal and even external projects now depend critically on us."
 The project is still based at Google Kirkland. It grew from 3 engineers, 6 20%ers (2010) to 6 engineers (time unknown) to 12 engineers (present). At one point, they open sourced the Java-based Python indexer used on the project ([incorporated into Jython](http://bugs.jython.org/issue1541)). It *used* to be publicly available as Google Code Search, but was [removed](http://codesearch.google.com/) in October 2011. (This happens to coincide with his leaked "platform" memo... Coincidence?). A front-end is still publicly available, albeit only for the [Chromium source base](http://code.google.com/p/chromium/source/search).

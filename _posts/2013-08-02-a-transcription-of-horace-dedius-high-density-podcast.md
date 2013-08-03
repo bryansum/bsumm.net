@@ -1,5 +1,5 @@
 ---
-title: A transcription of Horace Dediu's <i>High Density</i> podcast
+title: A transcription of High Density
 layout: post
 ---
 
