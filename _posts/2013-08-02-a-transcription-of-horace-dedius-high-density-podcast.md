@@ -8,9 +8,13 @@ The following is a loose transcription of Horace Dediu's [*High Density* podcast
 Enjoy!
 
 ## Transcript
-**Horace:** Tim Bajarin has an encyclopedic knowledge of the computer industry. I myself cut my teeth doing software development on the PC, and I wanted explore some of the great stories about the industry. 
+**Horace:** I'm joined today by Tim Bajarin. Tim is someone that people in the technology industry have been following for a long time. He's the head of Creative Strategies, although you do more than that. Can you give people some more background to your story?
 
-In particular, I'm curious about how technology organizations actually emerge. When  crossing over from technology to business, technology businesses were seen as another kind of normal business. I always thought that it requires a different kind of operating model, one that wasn't dealing with commodities (well, eventually they do), but in the beginning no one knows how to create products, and things are extremely volatile. 
+**Tim:** I joined Creative Strategies as a PC analyst. When we started, there were no PC analysts. There were four people in a role similar to mine, and we picked up the PC as part of other work. I was able to literally watch it from day one: Don Estridge from IBM and his team, as well as Apple. I've been following them (Apple) since 1971, and have interacted with all of its top leaders over the last 35 years. 
+
+**H:** You're a fountain of knowledge in this industry. I've been an analyst for a short time, but an engineer for a long time. I myself cut my teeth doing software development on the PC. Maybe you can share some stories about how these organizations evolve.
+
+ In particular, I'm curious about how technology organizations actually emerge. When  I crossed over from technology to business, in a career sense, technology businesses were seen as another kind of normal business. I always thought that it requires a different kind of operating model, one that wasn't dealing with commodities (well, eventually they do), but in the beginning no one knows how to create products, and things are extremely volatile. 
 
 How do you think about the history of Apple, etc. Did they know what they were doing? How did they come about creating these mechanisms of production? MS started a certain culture, etc. How did it happen?
 
