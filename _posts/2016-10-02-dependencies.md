@@ -18,16 +18,18 @@ Libraries, on the other hand, wait for a caller to interact with them. They ofte
 
 When diving into Swift development, I sought out opportunities to improve my understanding of what it could mean to organize logic in an iOS application. I read and watched substantial amounts of material on protocol-oriented programming, and / or using `NSOperation` as a fundamental unit of procedure abstraction (à la the *Advanced Operations* talk at WWDC 2015).
 
-Both of these approaches to me seem now more framework-minded than library-minded.
+Both of these approaches now seem more framework-minded than library-minded.
 
-Rob Napier’s fundamental argument at *try! Swift NYC* was that Swift is not a functional programming language. I agree. Using the type system to define behaviors can lead to substantial verbosity. It can also take your mind out of the problem space and into thinking about correctness & robustness checking, an irrelevant initial concern when building quickly.
+Rob Napier’s fundamental argument at *try! Swift NYC* was that Swift is not a functional programming language. I agree. Using the type system to define behaviors can lead to substantial verbosity. It can also take your mind out of the problem space and replaces it with pleasing the compiler, which is exactly the kind of effort you avoid when attempting a flow state.
 
-Using `NSOperation` subclasses for all asynchronous operations also imposed too many limits on how my application got built. The `NSOperation` state machine is relatively complex, and coming up with a reasonable error-handling model on top of it is not straightforward. Often times there is no one-size-fits-all solution to error handling. Even `CloudKit`, which based much of their API on `NSOperation` subclasses, had to make their own completion handlers (separate from the built-in `completionBlock`) as `NSOperation` could not guarantee the completion block was called on a specific thread, and therefore returned before its dependent operations get called.
+Using `NSOperation` subclasses for all asynchronous operations also impose too many limits on how my application is built. The `NSOperation` state machine is relatively complex, and coming up with a reasonable error-handling model on top of it is not straightforward. Often times there is no one-size-fits-all solution to error handling.
 
-Using framework-minded third party code in Swift land, at present, also means real pains in ensuring all your dependencies continue working when the next breaking syntax change happens.
+*(Case in point: even `CloudKit`, which based much of their API on `NSOperation` subclasses, had to make their own completion handlers, separate from the built-in `completionBlock`, as `NSOperation` can't guarantee completion blocks are called on a specific thread, and therefore return before dependent operations are started. `NSOperation` was designed in a pre-GCD world, and at present I wouldn't use it as more than a class-based `dispatch_async`.)*
 
-Where third party code is needed, adopting libraries vs. frameworks should be preferred. Swift actually shines in a library context: The semantics of the language can express useful constraints that help define and scope API boundaries.
+Using framework-minded third party code in Swift also means real pains in ensuring all your dependencies continue working when the next breaking syntax change happens.
 
-What I’m getting at is that I think being conservative in both adopting dependencies, and new techniques, in the Swift world  makes a lot of sense to me.
+Where third party code is needed, it's preferable to adopt libraries instead of frameworks. Swift can actually shine in a library context: The semantics of the language can express useful constraints that help define and scope API boundaries.
+
+Being conservative in adopting dependencies, and new techniques is undervalued in today's software society.
 
 Flexibility & understandability are two major concerns for any developer, and you should be loathe to give them up without good reason.
