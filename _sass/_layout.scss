@@ -5,6 +5,33 @@
     width: 100%;
 }
 
+.site-header, .site-footer {	
+	.nav-text {
+		width: 100%;
+		font-weight: 200;
+		text-align: right;
+		display: block;
+		color: $grey-color;
+	}
+	a, a:visited, a:hover {
+		text-decoration: none;
+	}
+}
+
+.site-header {
+	.nav-text {
+		border-bottom: 1px solid $grey-color-light;
+		margin: $spacing-unit auto 0 auto;
+	}
+}
+
+.site-footer {
+	.nav-text {
+		border-top: 1px solid $grey-color-light;
+		margin: 0 auto $spacing-unit auto;
+	}
+}
+
 /**
  * Posts
  */

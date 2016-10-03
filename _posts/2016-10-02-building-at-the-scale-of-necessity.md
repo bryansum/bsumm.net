@@ -18,7 +18,7 @@ Protocol-oriented programming in Swift increasingly feels like we want it as a f
 
 "Functional programming" in Swift is still largely one. (Rob Napier spoke at "try! Swift NYC" earlier last month, wherein he spent a lot of time initially working against, and later gave into, a world that really likes closures.)
 
-Using NSOperation as the basis for your entire application is another one. (Not everything in your application is a state machine. Also let us not forget: NSOperation was introduced before GCD.
+Using `NSOperation` as the basis for your entire application is another one. (Not everything in your application is a state machine. Also let us not forget: NSOperation was introduced before GCD.
 
 Make sure the abstraction you use is valuable in the future.
 
