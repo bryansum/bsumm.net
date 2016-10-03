@@ -1,91 +1,20 @@
-<!doctype html>
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    {% if page.title %}
-        <title>Bryan Summersett | {{ page.title }}</title>
-    {% else %}
-        <title>Bryan Summersett</title>
-    {% endif %}
-    <meta name="author" content="Bryan Summersett">
-    <meta name="viewport" content="maximum-scale=1.0, initial-scale=1.0">
-    <link href="/atom.xml" rel="alternate" title="Bryan Summersett" type="application/atom+xml" />
-    <link rel="icon" href="/favicon.ico">
-    <link rel="home index" href="/" type="text/html">
-    <link rel="me author" href="/about" type="text/html">
-    <!-- link rel="stylesheet" href="{{ '/css/style.css' | cdn }}"> -->
-    <link rel="stylesheet" href="{{ '/css/main.css' | cdn }}">
-	<link rel="stylesheet" href="{{ '/css/pygments.github.css' | cdn }}">
-    <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <!-- Google Analytics -->
-  <script type="text/javascript">
+<!DOCTYPE html>
+<html>
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-12133386-1']);
-    _gaq.push(['_trackPageview']);
+  {% include head.html %}
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+  <body>
 
-  </script>
-  <!-- Google Analytics end -->
-  <script type="text/javascript">
-var text = "Bryan Summersett";
-var chars = text
-    .replace(/ /g, '')
-    .split('');
+    {% include header.html %}
 
-var by3 = function(acc, e, i) {
-        var ai = Math.floor(i/3);
-        if (!acc[ai]) acc[ai] = "";
-        acc[ai] += e;
-        return acc;
-    };
-var zip = function(arrs) {
-    return arrs[0].map(function(_,i){
-        return arrs.map(function(arr){return arr[i]})
-    });
-}
-
-var colors = chars
-    .map(function(e,i) { return e.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0); })
-    .map(function(e,i) { return Math.floor(e * (255/25));  })
-    .map(function(e,i) { return ("0" + e.toString(16)).substr(-2); })
-    .reduce(by3, []);
-
-var splitChars = chars.reduce(by3, []);
-
-document.addEventListener("DOMContentLoaded", function() {
-    var logo = document.getElementById('logo');
-    var blocks = zip([colors, splitChars])
-        .forEach(function(e,i) {
-            var color = e[0], chars = e[1];
-            var div = document.createElement('div');
-            div.style.background = "#" + color;
-            div.textContent = chars;
-            logo.appendChild(div);
-        });
-});
-  </script>
-</head>
-<body>
-    <header>
-        <a id="logo" href="/"></a>
-    </header>
-
-    <div role="main" id="main">
+    <div class="page-content">
+      <div class="wrapper">
         {{ content }}
+      </div>
     </div>
-    <footer>
-            <a href="/index.html">Posts</a>.
-            <a href="/projects.html">Projects</a>.
-            <a href="http://github.com/bryansum">Github</a>.
-            <a href="http://twitter.com/bryansum">Twitter</a>.
-    <br>
-    <small>&copy; 2013 Bryan Summersett. Made in Seattle.</small>
-    </footer>
-</body>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
