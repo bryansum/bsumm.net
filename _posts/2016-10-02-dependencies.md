@@ -2,7 +2,7 @@
 title: Dependencies
 ---
 
-Brent Simmons spoke about this. As a sole contributor to a project, you need to be able to rely on your abstractions. Often the key abstractions in an app come from third parties. This may present a knowledge problem, because you likely don’t understand how that abstraction really works, which means when it breaks, you’re on the hook to investigate and hopefully come up with a fix.
+As a sole contributor to a project, you need to be able to rely on your abstractions. Often the key abstractions in an app come from third parties. This may present a knowledge problem, because you likely don’t understand how that abstraction really works, which means when it breaks, you’re on the hook to investigate and hopefully come up with a fix.
 
 I’ve shifted over the years on my feelings towards adopting dependencies. Dependencies can be good or bad. It's difficult to know when one is worth adopting.
 
