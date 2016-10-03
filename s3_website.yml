@@ -7,8 +7,7 @@ cloudfront_wildcard_invalidation: true
 cloudfront_invalidate_root: true
 
 max_age:
-  "images/*": 6000
-  "css/*": 6000
+  "assets/*": 6000
   "*": 300
 
 gzip: true
