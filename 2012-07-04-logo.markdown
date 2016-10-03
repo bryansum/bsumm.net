@@ -1,6 +1,0 @@
-Papert created mathematically expressive language fo learning, called LOGO. 
-
-### examples here
-
-Using LOGO, which is a *computational* geometry as opposed to Descarte's *algebraic* geometry or Euclid's *logical* style, we can easily visualize the work done by the little turtle as he moves along his path. Indeed, embodying and acting out what the turtle comprises *body syntonic* learning, while the achievement gained in creating a working piece of software comprises  *ego syntonic* learning.
-
