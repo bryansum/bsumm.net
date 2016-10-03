@@ -11,8 +11,5 @@ max_age:
   "css/*": 6000
   "*": 300
 
-gzip:
-  - .html
-  - .css
-  - .md
+gzip: true
 gzip_zopfli: true
