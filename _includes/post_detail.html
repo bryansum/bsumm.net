@@ -9,34 +9,9 @@
     </h1>
   </header>
   
-  {% if page.coffee %}
-  <div class="post-drink">
-    <img src="/images/glyphs/coffee.png">
-    <div class="details">
-      {{ page.coffee | markdownify }}
-    </div>
-  </div>
-  {% endif %}
-  
-  <div class="post-photos">
-    {% assign date_string = page.date | date: "%Y-%m-%d" %}
-    {% for static_file in site.static_files %}
-    {% if static_file.path contains date_string  %}
-    <img class="photo" src="{{ static_file.path | prepend: site.baseurl }}">
-    {% endif %}
-    {% endfor %}
-  </div>
+  <div class="spacer"></div>
   
   {{ content }}
-  
-  {% if page.cocktail %}
-  <div class="post-drink">
-    <div class="details">
-        {{ page.cocktail | markdownify }}
-    </div>
-    <img src="/images/glyphs/cocktail.png">
-  </div>
-  {% endif %}
 
 </article>
 
