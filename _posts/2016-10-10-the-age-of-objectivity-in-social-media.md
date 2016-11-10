@@ -6,7 +6,7 @@ Facebook holds substantial control over peer communication channels the world ov
 
 This is due to the nature of information in the digital age, which has [winner-takes-all](http://nassimtaleb.org/tag/winner-take-all-effects/) characteristics. 
 
-In print media, a multitude of newspapers constitutes a diverse set of opinions. They all have roughly equal orders-of-magnitude distribution. In the digital world, we have many fewer options: Twitter, Facebook, and diminishing few others.
+In print media, many independent newspapers would constitute a diversity of opinion. As physical goods, they all have roughly equal orders-of-magnitude distribution. In the digital world, we have many fewer options: Twitter, Facebook, and diminishingly few others.
 
 But, we say, Facebook and Twitter both constitute a diverse set of opinions, and therefore work in the same way as a newspaper ecosystem.
 
