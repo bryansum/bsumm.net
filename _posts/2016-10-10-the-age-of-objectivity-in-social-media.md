@@ -32,7 +32,7 @@ The reality of 1) is slim, that Facebook supports Trump, especially within Silic
 
 That leaves 3), that Facebook *does* believe Trump is a credible threat to making the world more open and connected, but remains publicly neutral.
 
-[You cannot fight intolerance with tolerance](https://medium.com/@nntaleb/the-most-intolerant-wins-the-dictatorship-of-the-small-minority-3f1f83ce4e15#.o13ktb61v). If you believe that your mission is in keep the world open and connected, and you have the means to oppose someone in direct opposition to that mission, you can't merely take no action and credibly retain that belief.
+[You cannot fight intolerance with tolerance](https://medium.com/@nntaleb/the-most-intolerant-wins-the-dictatorship-of-the-small-minority-3f1f83ce4e15#.o13ktb61v). If you believe that your mission is to make the world more open and connected, and you have the means to oppose someone in opposition to that mission, you can't merely take no action and credibly retain that belief.
 
 Facebook, in remaining publicly neutral on Trump, while believing that their message is being undermined by having him serve, would be doing this.
 
