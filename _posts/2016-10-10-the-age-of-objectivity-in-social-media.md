@@ -46,7 +46,7 @@ Facebook is not a government agency. It can have an opinion about politics, and 
 
 Facebook controls how many Americans consume daily news. Talking about elevating American political discourse by connecting other with diverse perspectives, while simultaneously profiting from an ecosystem which encourages, hyperbolic, divisive, often poorly researched journalism, is a sad, sad state of affairs.
 
-Facebook sits at a point of immense power, and rather than using it for good, he *chose* apathy, which is the real problem.
+Facebook sits at a point of immense power, and rather than using it for good, it *chose* apathy, which is the real problem.
 
 ## Takeaways
 
