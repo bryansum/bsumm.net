@@ -26,7 +26,7 @@ Either 1) Facebook, in private, supports Trump;
 
 Any of these conclusions paints Facebook, at best, as a hypocritical organization.
 
-The reality of 1) is slim, that Facebook supports Trump, especially within Silicon Valley; not to mention that immigration reform is one of Mark’s biggest philanthropic issues.
+The reality of 1) is slim, that Facebook supports Trump, especially within Silicon Valley; not to mention that immigration reform is one of Mark’s biggest social issues.
 
 2), that Facebook believes Trump does not threaten the world being more open and connected, may be true. But it would stand in contrast to the speech given at this year’s F8, where Mark talked about building “bridges, not walls,” and then goes on to talk about how Facebook’s mission stands in opposition to this.
 
