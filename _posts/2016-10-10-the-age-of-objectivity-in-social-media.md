@@ -12,7 +12,7 @@ But, we say, Facebook and Twitter both constitute a diverse set of opinions, and
 
 This is not so. The newspaper ecosystem is fundamentally unowned. Facebook is a private corporation. 
 
-FB wants content to go viral. That is the cream of their business. However, viral content is often successful exactly because it is shocking and hyperbolic. In this way, these memes are in some sense the engine of Facebook's entire business.
+FB wants content to go viral. That is the cream of their business. However, viral content is often successful exactly because it is shocking and hyperbolic. These memes are in some sense the engine of Facebook's entire business.
 
 Facebook, and therefore the Facebook feed algorithm, largely allow this content because they aim to honor the diversity of opinions of individuals on the platform. This is because Facebook’s values are to make the world more *open and connected.*
 
