@@ -1,0 +1,6 @@
+#!/bin/bash -eu -o pipefail
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_*.jdk/Contents/Home
+
+jekyll build
+s3_website push
