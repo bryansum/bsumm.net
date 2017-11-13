@@ -85,7 +85,6 @@ figcaption {
 }
 
 ul, ol {
-    margin-left: $spacing-unit;
     list-style-type: none;
 }
 
@@ -134,15 +133,18 @@ section.content > .wrapper {
 
     > ul.post-list {
         > li {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
             > span {
-                width: 15%;
-                display: inline-block;
                 text-align: right;
-                padding-right: 2em;
-            }
-            > a {
+                padding-right: 1em;
+                width: 15%;
+                min-width: 80px;
                 display: inline-block;
             }
+            > a {}
         }
     }
 }
