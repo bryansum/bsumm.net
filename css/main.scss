@@ -86,13 +86,7 @@ figcaption {
 
 ul, ol {
     margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
+    list-style-type: none;
 }
 
 a {
@@ -133,6 +127,29 @@ pre {
     }
 }
 
+section.content > .wrapper {
+    > * {
+        padding: 2em;
+    }
+
+    > ul.post-list {
+        > li {
+            > span {
+                width: 15%;
+                display: inline-block;
+                text-align: right;
+                padding-right: 2em;
+            }
+            > a {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+section.content > .wrapper > * {
+}
+
 .wrapper {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -158,9 +175,7 @@ pre {
     }
 }
 
-// Layout
-
-.site-header, .site-footer {    
+.site-header, .site-footer {
     .nav-text {
         width: 100%;
         font-weight: 200;
@@ -197,6 +212,7 @@ pre {
 
 article {
     padding: 2em;
+
     > * {
         max-width: 650px;
         margin-left: auto;

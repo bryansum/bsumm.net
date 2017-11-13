@@ -1,4 +1,17 @@
 ---
 layout: base
 ---
-{% include post.html %}
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="name headline">{{ page.title }}</h1>
+        <h3 itemprop="description">{{ page.description }}</h3>
+    </header>
+
+    <div class="spacer"></div>
+
+    {{ content }}
+
+    <footer>
+        Posted on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </footer>
+</article>
