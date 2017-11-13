@@ -3,9 +3,9 @@ layout: post
 title: Tufte and Infographics
 ---
 
-I've recently read Tufte's [Visual Display of Quantitative Information](http://www.amazon.com/Visual-Display-Quantitative-Information/dp/096139210X).Althought it predates the predominance of digital infographics, the text applies to any two dimensional medium. 
+I recently read Tufte's [Visual Display of Quantitative Information](http://www.amazon.com/Visual-Display-Quantitative-Information/dp/096139210X). Althought it predates the predominance of digital infographics, the text applies to any two dimensional medium. 
 
-One of the main ideas is that good information design strives to reveal the greatest number of ideas in the shortest time, with the least ink, in the smallest space. 
+One of the main ideas is that **good information design strives to reveal the greatest number of ideas in the shortest time, with the least ink, in the smallest space.** 
 
 It's interesting to contrast this with the trend of infographics, which seek to firstly entertain through visual experiences. Tufte would call this "chartjunk," as its design does nothing to contribute to a user's real comprehension of the underlying data. 
 
