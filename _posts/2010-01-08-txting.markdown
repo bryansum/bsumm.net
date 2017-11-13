@@ -1,0 +1,6 @@
+---
+layout: post
+title: txting
+---
+
+There's something haiku-like about the 160-character limit. The poets of our day will tweet.
