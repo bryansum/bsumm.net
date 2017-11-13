@@ -1,6 +1,5 @@
 ---
-title: Analyzing mbostock's <i>queue.js</i>
-layout: post
+title: Analyzing mbostock's queue.js
 ---
 
 Even with the proliferation of open source software on the web, relatively few developers take the time to study the source code of the software they might use everyday. I believe this can largely be traced back to a lack of culture around code reading, which I will hopefully talk about in a later post. To combat this for now, however, the answer is simple: we just need to practice looking at and studying the works of others, similar to the way painters [studied (and copied) the great masters](http://www.paulgraham.com/hp.html). 

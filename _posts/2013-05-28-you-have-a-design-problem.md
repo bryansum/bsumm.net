@@ -1,6 +1,5 @@
 ---
 title: You have a design problem
-layout: post
 ---
 
 *The following is an interpretive transcription of [Ryan Singer's UX / UI PeepCode sessions](https://peepcode.com/products/design-bundle) in the style of Paul Arden's [It's Not How Good You Are, Its How Good You Want to Be](http://www.amazon.com/Its-Not-How-Good-Want/dp/0714843377)*.

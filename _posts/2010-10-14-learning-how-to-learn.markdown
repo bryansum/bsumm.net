@@ -1,6 +1,5 @@
 ---
 title: Learning How to Learn
-layout: post
 ---
 
 Finding connections between disciplines fascinates me, like the similarities between [work habits of hackers and painters](http://www.paulgraham.com/hp.html). The benefits of extracurricular research in unrelated fields aren't always immediately realized, but this gain in perspective can lead to many long-term benefits. Lateral thinking and creativity depend on the ability to adapt processes and metaphors to something else. Regarding my ideal university experience, I advocate that engineering majors invest substantial time in studying humanities.

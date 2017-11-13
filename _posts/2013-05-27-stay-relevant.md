@@ -1,6 +1,5 @@
 ---
 title: Stay relevant
-layout: post
 ---
 
 2005 M.I.A Pitchfork [interview](http://web.archive.org/web/20050317044856/www.pitchforkmedia.com/interviews/m/mia-05/), describing the circumstances of her first album:

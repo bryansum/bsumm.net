@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Harmony
 ---
 "Art is harmony." - Seurat.

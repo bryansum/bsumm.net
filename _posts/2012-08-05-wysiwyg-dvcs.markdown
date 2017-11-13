@@ -1,6 +1,5 @@
 ---
 title: WYSIWYG and merging
-layout: post
 ---
 
 I just read [Joel Spolsky's take](http://www.joelonsoftware.com/items/2010/03/17.html) on distributed version control. He states the most important thing about Git is that it forces people to think in terms of changes, not versions. As in, bring in Mary's change, bring in his change, as opposed to everyone working towards some base version. GitHub takes this idea and turns it into a service.

@@ -1,6 +1,5 @@
 ---
 title: Papert's Mindstorms
-layout: post
 ---
 
 <img src="/images/mindstorms.jpg" style="height: auto; width: 195px; margin: 15px; float: right;">

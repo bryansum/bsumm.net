@@ -1,10 +1,7 @@
 ---
-layout: post
 title: The Latency of Dialogue
+description: What we lose in a stream-based culture
 ---
-
-*What we lose in a stream-based culture.*
-
 When you build a system that serves up artifacts as a stand-in for *anticipatory dialogue*, you create a stream.
 
 Streams exist in droves today: email, Twitter feeds, Facebook, BuzzFeed, Instagram, Pinterest, and Vine, to a certain extent. In the end, they all are facsimiles of the discontinuous, ever changing set of real-world streams of social interaction in the world at large. That is why using multiple social networks feels additive, and beneficial, instead of fragmented and exclusive.

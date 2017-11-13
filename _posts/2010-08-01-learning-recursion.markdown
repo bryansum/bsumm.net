@@ -1,6 +1,5 @@
 ---
 title: Scheming to learn recursion
-layout: post
 ---
 
 Reading [Gödel, Escher, Bach](http://www.amazon.com/gp/product/0394756827) broadened my perspective on recursion and the idea of the pervasiveness of composition *of* self *with* self. Recursion is everywhere: in the Piaget's genetic epistemology, where new mental abstractions are defined by existing ones; the actual neurological structure of our brain via feedback loops, and its digital analogue in neural networks; visicious and virtuous cycles in systems thinking and economics; fractals; and also in various programming languages, especially those with lamdba calculus roots.

@@ -1,6 +1,5 @@
 ---
 title: A transcription of High Density
-layout: post
 ---
 
 The following is a loose transcription of Horace Dediu's [*High Density* podcast](http://www.asymco.com/2013/07/22/high-density-2-tim-bajarin/), a spinoff of his excellent *Critical Path* series. The conversation is between Horace and Tim Bajarin, a technology analyst of many years. Tim offers a compelling summary of the history of the PC industry, one which I find increasingly relevant, as Horace points out, for its parallels to the mobile OS landscape, especially the parallel between IBM and Google's strategy for PCs and Android, respectively. Also crucial is the observation of a continual pattern in platform lifecycles: "hardware, software OS, SDK, innovative apps, and ... explosion." It was also news to me that Alan Kay ultimately had a lot of influence on John Sculley's vision for computing, as Alan was a fellow at Apple during Sculley's tenure. 
