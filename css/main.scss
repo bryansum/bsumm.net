@@ -15,7 +15,7 @@ $spacing-unit:     30px;
 $text-color:       black;
 $brand-color:      #2a7ae2;
 
-$grey-color:       #828282;
+$grey-color:       #888;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
@@ -52,10 +52,23 @@ body {
 
 // Set `margin-bottom` to maintain vertical rhythm
 h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
+p, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
+}
+
+blockquote {
+    color: $grey-color;
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: $spacing-unit;
+    margin-top: $spacing-unit; // Make up for the unit below
+    padding: 1em;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 img {
@@ -95,20 +108,6 @@ a {
         text-decoration: underline;
     }
 }
-
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
 
 pre,
 code {
@@ -228,7 +227,7 @@ pre {
     line-height: 1;
     
     time {
-        font-size: 0.6em;
+        font-size: 0.8em;
         line-height: 1.7em;
         font-weight: 300;
         float: left;
@@ -241,7 +240,7 @@ pre {
 }
 
 .post {
-    > p {
+    > * {
         max-width: 650px;
         margin-left: auto;
         margin-right: auto;
