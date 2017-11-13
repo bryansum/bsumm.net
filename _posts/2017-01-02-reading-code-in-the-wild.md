@@ -1,6 +1,6 @@
 ---
-title: Code in the wild
-description: And where to find them
+title: Reading code in the wild
+description: And where to find it
 ---
 One under-levereged form of learning programming is through reading others’ code, and especially full working applications. Unlike tutorials or examples projects, these include all the imperfections actual working software has. They serve as a fully-formed implementation of an architectural idea (or often lack of one).
 
