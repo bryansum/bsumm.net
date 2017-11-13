@@ -3,19 +3,16 @@
 ---
 @charset "utf-8";
 
+// Global variables
 
-
-// Our variables
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$base-font-size:   1.2em;
-$base-font-weight: 400;
+$base-font-size:   1em;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.444;
+$base-line-height: 1.7;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       black;
 $brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
@@ -28,25 +25,245 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
+/// Base styling
+
+// Reset some default styling
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: #{$base-font-size}/#{$base-line-height} $base-font-family;
+    color: $text-color;
+    background-color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: 'liga', 'kern';
+}
+
+// Set `margin-bottom` to maintain vertical rhythm
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+ul, ol {
+    margin-left: $spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:visited {
+        color: darken($brand-color, 15%);
+    }
+
+    &:hover {
+        color: $text-color;
+        text-decoration: underline;
+    }
+}
+
+blockquote {
+    color: $grey-color;
+    border-left: 4px solid $grey-color-light;
+    padding-left: $spacing-unit / 2;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
 
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout"
-;
+pre,
+code {
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 90%;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+// Layout
+
+.banner {
+    width: 100%;
+}
+
+.site-header, .site-footer {    
+    .nav-text {
+        width: 100%;
+        font-weight: 200;
+        text-align: right;
+        display: block;
+        color: $grey-color;
+    }
+    a, a:visited, a:hover {
+        color: $grey-color;
+        text-decoration: none;
+    }
+}
+
+.site-header .nav-text {
+    border-bottom: 1px solid $grey-color-light;
+    margin: $spacing-unit auto 0 auto;
+}
+
+.site-footer .nav-text {
+    border-top: 1px solid $grey-color-light;
+    margin: 0 auto $spacing-unit auto;
+    
+    font-size: 80%;
+    a {
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+.spacer {
+    margin: $spacing-unit auto;
+    @extend %clearfix;
+}
+
+.post-header {
+    @extend %clearfix;
+}
+
+.post-title {
+    font-family: system-headline, -apple-system-headline, BlinkMacSystemHeadlineFont,
+      "Helvetica Neue", "Lucida Grande";
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 0;
+
+    letter-spacing: -0.5px;
+    line-height: 1;
+    
+    time {
+        font-size: 0.6em;
+        line-height: 1.7em;
+        font-weight: 300;
+        float: left;
+        clear: left;
+    }
+    
+    .title {
+        float: left;
+    }
+}
+
+.post {
+    > p {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/** Navigation */
+.nav {
+    margin: $spacing-unit 0;
+    font-weight: 300;
+    
+    @extend %clearfix;
+}
+.nav a:hover {
+    text-decoration: none;
+};
+
+.nav-previous {
+    float: left;
+}
+
+.nav-next {
+    float: right;
+}
+
