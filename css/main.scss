@@ -112,10 +112,10 @@ a {
 pre,
 code {
     font-family: "SF Mono", "Menlo", monospace;
-    font-size: 90%;
+    font-size: 0.9em;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eee;
+    background-color: #fdfdfd;
 }
 
 code {
@@ -208,7 +208,7 @@ pre {
 }
 
 .spacer {
-    margin: $spacing-unit auto;
+    margin: $spacing-unit/2 auto;
     @extend %clearfix;
 }
 
