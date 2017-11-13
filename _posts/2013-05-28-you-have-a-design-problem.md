@@ -6,27 +6,20 @@ layout: post
 *The following is an interpretive transcription of [Ryan Singer's UX / UI PeepCode sessions](https://peepcode.com/products/design-bundle) in the style of Paul Arden's [It's Not How Good You Are, Its How Good You Want to Be](http://www.amazon.com/Its-Not-How-Good-Want/dp/0714843377)*.
 
 <pre>
-
 You have a design problem.
-
 
 Ask:
 How did they get there?
 
 What's going to happen when they're done?
 
-
 Before, now, after.
-
-
 
 Constrain the domain so the problem is simpler.
 Think of the real-world analogy.
 
-
 Draw information flows:
 relations based on navigation trees.
-
 
 Think about state.
 Does it matter?
@@ -38,8 +31,6 @@ Email is UI too.
 
 Split the UX into beginning, middle, and end contexts.
 Afterwards, design for the screen with these in mind.
-
-
 
 What screen matters most?
 
@@ -58,7 +49,6 @@ There's always conflict.
 Identify the thing that I don't know, and build it out. 
 Remove uncertainty.
 
-
 Consider the naive approach first.
 
 Find the natural way of doing things.
@@ -67,13 +57,10 @@ what would its most natural-looking interface be?
 
 (Scribbles on paper?)
 
-
 Try to communicate using their vocabulary.
 
 What's the dumbest idea that works?
 If this were paper, how would I do it? 
-
-
 
 Christopher Alexander said
 conflict is the starting point.
@@ -82,17 +69,12 @@ What conflicts exist?
 *Weirdness* is conflict.
 Increase confidence by resolving conflicts through design.
 
-
-
 Sometimes, it needs to be seen on screen to make a decision.
 
 Confidence is a spectrum.
 
 It's important to find group confidence in a design on a team.
 Do this by working side by side on something.
-
-
-
 
 Make the intended action clear.
 One way to do this is guarantee there's only one thing to do.
@@ -103,12 +85,7 @@ Before, now, after.
 Every step needs a concept and implementation.
 They must be evident to the user.
 
-
-
-
-
 Mock (in Photoshop) to explore alternatives.
-
 
 Criteria for it working:
 *reptile stuff*.
@@ -116,14 +93,11 @@ Criteria for it working:
 When I look at it...
 how does it affect me?
 
-
-
 Sketching UX doesn't mean doing everything. 
 *Use as medicine to ease the pain of worrying.*
 
 Prove clear thinking by sketching. Remove worry.
 Just enough to know what you're doing.
-
 
 Design on the wall is exactly this.
 Temporary.
@@ -132,20 +106,12 @@ through the design.
 
 Then they go work.
 
-
-
 There's never a moment where everything is built.
 Design only when I need to design.
 See what's working from there.
 
 Step by step.
 
-
-</pre>
-<br/>
-<br/>
-
-<pre>
 To prototype your UI:
 
 *Focus on one UI element at a time.*
@@ -168,10 +134,8 @@ Write it the long, easy way.
 Start with a mess.
 Refactor when your conflicts are resolved.
 
-
 Photoshop can remove doubt.
 Use it to see something.
 Mock it quick to see how it will look.
 Throw it away.
-
 </pre>

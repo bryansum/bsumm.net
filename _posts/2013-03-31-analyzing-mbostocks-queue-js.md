@@ -16,25 +16,24 @@ queue()
     .defer(fs.stat, __dirname + "/../Makefile")
     .defer(fs.stat, __dirname + "/../package.json")
     .await(function(error, file1, file2) {
-    console.log(file1, file2);
-  });
+        console.log(file1, file2);
+    });
 ```
 
 ## *queue.js*
 
-Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). <span class=ref>Note that [this parenthesis isn't necessarily required](http://stackoverflow.com/questions/1634268/explain-javascripts-encapsulated-anonymous-function-syntax); the JS parser just needs to treat this as a *function expression* rather than a *function declaration*, so a *+* or *!* would work as well.</span>The surrounding parenthesis helps clarify to the reader that this function will be executed immediately.
+Let's begin. We start with an [anonymous self-invoking function](http://stackoverflow.com/questions/5815757/what-exactly-is-the-point-of-this-function-construct-why-is-it-needed). Note that [this parenthesis isn't necessarily required](http://stackoverflow.com/questions/1634268/explain-javascripts-encapsulated-anonymous-function-syntax); the JS parser just needs to treat this as a function *expression* rather than a function *declaration*, so a `+` or `!` would work as well.) The surrounding parenthesis helps clarify to the reader that this function will be executed immediately.
 
 ```javascript
 (function() {
 ```
 
-Next, we check for Node.js-style modules; if these exist, add *queue* as a module. Otherwise add it to the *self* object. <span class=ref>Assigning to *self* was new to me, as I typically expect modules to assign to the *window* global for browsers; however, it turns out most browsers resolve *self* to *window* in the global context, and to the Web Worker context [in a Web Worker](http://blog.vjeux.com/2011/javascript/javascript-one-line-global-export.html). Thus, assigning to *self* covers both contexts.</span> Note it may also seem that *queue* is undefined at this point; however, because JavaScript [hoists variable names](http://stackoverflow.com/questions/7506844/javascript-function-scoping-and-hoisting) to the top of functions, the function *queue* from below is actually available.
+Next, we check for Node.js-style modules; if these exist, add *queue* as a module. Otherwise add it to the *self* object. Assigning to *self* was new to me, as I typically expect modules to assign to the *window* global for browsers; however, it turns out most browsers resolve *self* to *window* in the global context, and to the Web Worker context [in a Web Worker](http://blog.vjeux.com/2011/javascript/javascript-one-line-global-export.html). Thus, assigning to *self* covers both contexts. Note it may also seem that *queue* is undefined at this point; however, because JavaScript [hoists variable names](http://stackoverflow.com/questions/7506844/javascript-function-scoping-and-hoisting) to the top of functions, the function *queue* from below is actually available.
 
 ```javascript
   if (typeof module === "undefined") self.queue = queue;
   else module.exports = queue;
   queue.version = "1.0.3";
-
 ```
 
 This is a shorthand for *Array.prototype.slice*, and now we enter into our main function definition.
@@ -78,7 +77,7 @@ Next we have *defer*, our first public function. *defer* slurps in its arguments
         tasks.push(arguments);
 ```
 
-Next, we increment our count of remaining tasks, and then execute our *pop()* method, where most of the the magic happens. We'll look at this in a second. <span class=ref>Interesting detail: *defer* tries to executes our tasks immediately, rather than waiting for *await*, for instance. This means that we can call *defer* after we *await* and it should call *await* again for us.</span> So ends our *defer* method.
+Next, we increment our count of remaining tasks, and then execute our *pop()* method, where most of the the magic happens. We'll look at this in a second. Note: *defer* tries to executes our tasks immediately, rather than waiting for *await*, for instance. This means that we can call *defer* after we *await* and it should call *await* again for us. So ends our *defer* method.
 
 ```javascript
         ++remaining;
@@ -106,7 +105,7 @@ The *await* method and *awaitAll* methods are similar; they simply set the varia
     };
 ```
 
-*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. <span class=ref>The *popping* variable here is used to signal to the task's internal callback function whether or not we're still actively popping tasks off our queue. This comes into play in the case when a task completes synchronously / immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again.</span> Now we get to the main *while* loop for executing our tasks. We continue to spawn new tasks (via *started*) until we run out of them, or we reach the max parallelism of tasks at the given time.
+*Pop* is the internal method responsible for popping remaining tasks off the queue and executing them, *n* at a time, where *n* is our *parallelism* value. The *popping* variable here is used to signal to the task's internal callback function whether or not we're still actively popping tasks off our queue. This comes into play in the case when a task completes synchronously / immediately (i.e., not on the next event loop) so that we know not to fire the *pop* call again. Now we get to the main *while* loop for executing our tasks. We continue to spawn new tasks (via *started*) until we run out of them, or we reach the max parallelism of tasks at the given time.
 
 ```javascript
     function pop() {
@@ -149,7 +148,7 @@ Now we're inside the internal callback function. Decrementing the active count m
           notify();
 ```
 
-Otherwise, if our task executed successfully, store the result for this callback in the original task array. Check if there are any remaining tasks; if there are and we're still popping tasks in our *while* loop, do nothing, because the loop is dequeueing tasks already. Otherwise, start popping again. <span class=ref>Immediately returning / synchronous tasks don't normally occur for tasks that involve I/O or ones that call *setTimeout*, because these will typically trigger their callback on the next event loop tick.</span> Finally, if there's no remaining tasks, notify the client that we're done.
+Otherwise, if our task executed successfully, store the result for this callback in the original task array. Check if there are any remaining tasks; if there are and we're still popping tasks in our *while* loop, do nothing, because the loop is dequeueing tasks already. Otherwise, start popping again. Immediately returning / synchronous tasks don't normally occur for tasks that involve I/O or ones that call *setTimeout*, because these will typically trigger their callback on the next event loop tick. Finally, if there's no remaining tasks, notify the client that we're done.
 
 ```javascript
         } else {
@@ -179,7 +178,6 @@ Finally *notify*. This function executes the callback function given by the clie
 ```javascript
   function noop() {}
 })();
-
 ```
 
 ## Conclusion
