@@ -158,24 +158,7 @@ pre {
     }
 }
 
-.icon {
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
-}
-
 // Layout
-
-.banner {
-    width: 100%;
-}
 
 .site-header, .site-footer {    
     .nav-text {
@@ -212,52 +195,34 @@ pre {
     @extend %clearfix;
 }
 
-.post > header {
-    @extend %clearfix;
-    
-    > h1 {
-        font-family: system-headline, -apple-system-headline, BlinkMacSystemHeadlineFont, "Helvetica Neue", "Lucida Grande";
-        font-size: 2em;
-        line-height: 1;
-        margin-bottom: 0;
-    }
-
-    > h3 {
-        color: $grey-color;
-        font-weight: 400;
-    }
-}
-
-.post {
+article {
+    padding: 2em;
     > * {
         max-width: 650px;
         margin-left: auto;
         margin-right: auto;
     }
-}
 
-.post > footer {
-    font-size: 0.9em;
-    padding: 1em;
-    color: $grey-color;
-}
-
-/** Navigation */
-.nav {
-    margin: $spacing-unit 0;
-    font-weight: 300;
+    > header {
+        @extend %clearfix;
     
-    @extend %clearfix;
-}
-.nav a:hover {
-    text-decoration: none;
-};
+        > h1 {
+            font-family: system-headline, -apple-system-headline, BlinkMacSystemHeadlineFont, "Helvetica Neue", "Lucida Grande";
+            font-size: 2em;
+            line-height: 1;
+            margin-bottom: 0;
+        }
 
-.nav-previous {
-    float: left;
-}
+        > h3 {
+            color: $grey-color;
+            font-weight: 400;
+        }
+    }
 
-.nav-next {
-    float: right;
+    > footer {
+        font-size: 0.9em;
+        padding: 1em;
+        color: $grey-color;
+    }
 }
 
