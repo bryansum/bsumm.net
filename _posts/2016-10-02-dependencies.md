@@ -6,7 +6,7 @@ As a sole contributor to a project, you need to be able to rely on your abstract
 
 I’ve shifted over the years on my feelings towards adopting dependencies. Dependencies can be good or bad. It's difficult to know when one is worth adopting.
 
-One heuristic is whether the code wants to be a library or a framework.
+One heuristic is whether the dependency aims to be a library or a framework.
 
 The distinction is not perfectly clear, but in general I see frameworks as “one big idea”-minded software that promises great benefits, but only after wholly committing to a worldview. Think Christianity, not Buddhism.
 
@@ -28,8 +28,8 @@ Using `NSOperation` subclasses for all asynchronous operations also impose too m
 
 Using framework-minded third party code in Swift also means real pains in ensuring all your dependencies continue working when the next breaking syntax change happens.
 
-Where third party code is needed, it's preferable to adopt libraries instead of frameworks. Swift can actually shine in a library context: The semantics of the language can express useful constraints that help define and scope API boundaries.
+When using third party software, **you give up less control with libraries instead of frameworks**. Swift can actually shine in a library context: The semantics of the language can express useful constraints that help define and scope API boundaries.
 
-Being conservative in adopting dependencies, and new techniques is undervalued in today's software society.
+Being conservative in adopting dependencies seems undervalued.
 
 Flexibility & understandability are two major concerns for any developer, and you should be loathe to give them up without good reason.
