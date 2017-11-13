@@ -6,24 +6,24 @@
 // Global variables
 
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-$base-font-size:   1em;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size: 1em;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.7;
 
-$spacing-unit:     30px;
+$spacing-unit: 30px;
 
-$text-color:       black;
-$brand-color:      #2a7ae2;
+$text-color: black;
+$brand-color: #2a7ae2;
 
-$grey-color:       #888;
+$grey-color: #888;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width: 800px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -135,7 +135,7 @@ pre {
 
 .wrapper {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -144,7 +144,7 @@ pre {
 
     @include media-query($on-laptop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        max-width: calc(#{$content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }
@@ -212,30 +212,19 @@ pre {
     @extend %clearfix;
 }
 
-.post-header {
+.post > header {
     @extend %clearfix;
-}
-
-.post-title {
-    font-family: system-headline, -apple-system-headline, BlinkMacSystemHeadlineFont,
-      "Helvetica Neue", "Lucida Grande";
-    font-weight: 600;
-    font-size: 2em;
-    margin-bottom: 0;
-
-    letter-spacing: -0.5px;
-    line-height: 1;
     
-    time {
-        font-size: 0.8em;
-        line-height: 1.7em;
-        font-weight: 300;
-        float: left;
-        clear: left;
+    > h1 {
+        font-family: system-headline, -apple-system-headline, BlinkMacSystemHeadlineFont, "Helvetica Neue", "Lucida Grande";
+        font-size: 2em;
+        line-height: 1;
+        margin-bottom: 0;
     }
-    
-    .title {
-        float: left;
+
+    > h3 {
+        color: $grey-color;
+        font-weight: 400;
     }
 }
 
@@ -245,6 +234,12 @@ pre {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.post > footer {
+    font-size: 0.9em;
+    padding: 1em;
+    color: $grey-color;
 }
 
 /** Navigation */

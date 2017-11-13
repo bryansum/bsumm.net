@@ -1,18 +1,18 @@
 {% include navigation.html %}
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title">
-        <span class="title" itemprop="name headline">{{ page.title }}</span>
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
-    </h1>
-  </header>
+    <header>
+        <h1 itemprop="name headline">{{ page.title }}</h1>
+        <h3 itemprop="description">{{ page.description }}</h3>
+    </header>
   
-  <div class="spacer"></div>
-  
-  {{ content }}
+    <div class="spacer"></div>
 
+    {{ content }}
+
+    <footer>
+        Posted on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+    </footer>
 </article>
 
 {% include navigation.html %}
