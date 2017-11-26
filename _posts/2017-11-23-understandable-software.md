@@ -3,36 +3,38 @@ title: Understandable software, pt. 1
 description: "What problem is it solving?"
 ---
 
-Have you ever put together a LEGO set? Especially one with a lot of instructions? Or nailed a complicated recipe? Or put together complex IKEA furniture?
+Have you ever completed a LEGO set with lots of instructions? Or orchestrated a particularly complex recipe? Or even put together a piece of IKEA furniture?
 
-Looking broadly at the task, it can seem daunting. This is why there are detailed instructions for one to follow. After observing each discrete step, and then working through it, the task becomes doable. At some point you realize you've completed it!
+Looking at the big picture, it can seem daunting. This is why there are detailed instructions for one to follow. After studying each step, and then working through it, the task becomes doable.
 
-This is the value of well-written instructions. It gives us a framework to break our thinking down into manageable chunks, form mental models about how something works, and overall helps us to complete a task.
+This is the value of well-written instructions. It gives us a framework to break concepts into manageable chunks, form mental models about how something works, and overall helps us to complete a task.
 
 **Understandable software has the same properties.**
 
 When we don't understand how something works, the risk of failure increases.
 
-Ultimately code survives based on its ability to be understood. This happens internally, at an API level (if it is a library), and through tests / documentation.
+Ultimately code survives based on its ability to be understood. Understanding code can happen at the implementation level, at an API level (if it is a library), or externally, through tests and documentation.
 
-In reality, good documentation is often scarce, and the author is not available to talk to. If this isn't available, you must turn to reading the code itself.
+In reality, good documentation is often scarce, and the author is not available. At this point you must turn to reading the code.
 
-Like that complex recipe, reading new code might seem overwhelming at first glance, but can usually be understood with enough time and motivation.
+Reading new code might seem initially overwhelming, but can usually be understood with enough time and motivation.
 
-First: what problem is the code solving? A clearly defined problem is critical, because it is the only way we can hope to understand the solution the code provides.
+It's important to determine: what problem is the code solving? This guides our understanding of the big picture.
 
-Next to look at are high-level concepts: the programming model, how the code is organized, how data flows through the system, and important data types. Does the code follow a set of principles?
+Next are high-level attributes: the programming model, how the code is organized, or how data flows through the system. Does the code follow a set of principles? Is it consistent?
 
-At some point, it should be possible to form a functional model of what's going on.
+At some point, it should be possible to form a functional model of what's going on. This is where the boxes and arrows are drawn.
 
-Ideally abstractions / groupings are related to the problem domain, so this maps easily to what we expect.
+Ideally names of abstractions / groups of code related to the problem domain appear, so we begin mapping them to our new mental models.
 
-As needed, we should be able to visit any implementation and understand its purpose; how it's  implemented; its affect on code external to it; and how it is affected by any code external to it.
+We can study key data structures and how they're read and written.
 
-Overall, our ability to understand code is proportional to its focus, and purpose. The reader can effectively reason about individuals components and their interactions because we made it understandable.
+We can study a component's implementation to understand its purpose, its responsibilities, or how executes. We can also predict how it affects external code, and how external code affects it.
 
-What we call software architecture is just an adherence to a given set of principles applied to a problem.
+After you understand both the big picture *and* details, you're then able to build on it or make changes with confidence.
 
-When someone understands the architecture, it makes it easier to build on it and make changes. It saves time, and money.
+Making it easy for the reader to understand your software ultimately saves time, and money. Often, this reader includes a near-future version of yourself.
 
-We have increasingly good tools available to help us to make our software more understandable. I would like to take time in a series of upcoming posts to explore just what that means.
+We have increasingly many tools to help us make our software more understandable. This includes the language's type system and its data modeling primitives. We can also follow certain programming practices which aid in our comprehension as well.
+
+In a series of upcoming posts, I'd like to explore these topics in more detail.
