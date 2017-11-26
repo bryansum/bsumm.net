@@ -31,8 +31,8 @@ As needed, we should be able to visit any implementation and understand its purp
 
 Overall, our ability to understand code is proportional to its focus, and purpose. The reader can effectively reason about individuals components and their interactions because we made it understandable.
 
-What we typically call software architecture is often just an adherence to a given set of principles applied to a problem.
+What we call software architecture is just an adherence to a given set of principles applied to a problem.
 
 When someone understands the architecture, it makes it easier to build on it and make changes. It saves time, and money.
 
-We have increasingly good tools available to help us to make our software more understandable. I would like take time in a series of upcoming posts to explore just what that means.
+We have increasingly good tools available to help us to make our software more understandable. I would like to take time in a series of upcoming posts to explore just what that means.
