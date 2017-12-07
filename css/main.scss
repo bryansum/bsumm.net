@@ -132,6 +132,8 @@ section.content > .wrapper {
     }
 
     > ul.post-list {
+        line-height: 1.7em;
+
         > li {
             overflow: hidden;
             text-overflow: ellipsis;
